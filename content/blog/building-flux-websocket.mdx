@@ -1,0 +1,45 @@
+---
+title: "Building Flux: Real-Time WebSocket Architecture"
+date: "2026-07-14"
+excerpt: "How I built a real-time streaming platform with Socket.IO, RTMP ingestion, and low-latency HLS delivery."
+tags: ["websocket", "socketio", "react", "nodejs", "streaming"]
+---
+## Why Real-Time Matters
+The web is increasingly real-time. From live collaboration to streaming, users expect instant updates without refreshing the page. Building Flux taught me how to architect systems that handle thousands of concurrent connections while maintaining low latency and reliability.
+## Architecture Overview
+Flux uses a layered architecture that separates media streaming from application logic:
+The key insight is decoupling the media pipeline from the application layer. This allows both to scale independently and ensures chat doesn't block streaming, and vice versa.
+## The WebSocket Layer
+Socket.IO powers the real-time engagement features: live chat, viewer counts, and notifications. Here's the core connection handler:
+### Key Design Decisions
+1. **Room-based isolation**: Each stream has its own Socket.IO room, preventing message broadcasting across streams
+2. **History loading**: New viewers receive the last 50 messages on connect, ensuring context isn't lost
+3. **Decoupled from media**: Chat operates independently from the RTMP/HLS pipeline
+## Challenges I Faced
+### 1. Connection Scaling
+Initially, I had the Socket.IO server handling both API requests and WebSocket connections. Under load, this created bottlenecks.
+**Solution**: Separate the Socket.IO server into its own process. This allowed horizontal scaling of WebSocket connections independently from REST API handling.
+### 2. Message Ordering
+With multiple server instances, messages could arrive out of order. A user might see a reply before the original message.
+**Solution**: Implement server-side timestamps and sort by `createdAt` rather than relying on arrival order. Combined with MongoDB's indexed timestamps, this ensured consistent ordering.
+### 3. Reconnection Handling
+Network drops are inevitable. Users need to seamlessly reconnect without losing context.
+**Solution**: Socket.IO's built-in reconnection with exponential backoff, combined with client-side state preservation. The `chat-history` event on reconnect ensures no messages are lost.
+## Results
+- **60-70% payload reduction** via gzip compression
+- **100 requests/15 minutes** rate limiting for API abuse protection
+- **Multi-bitrate streaming** (360p/720p/1080p) for varying bandwidth
+- **Sub-second latency** for chat messages
+## Lessons Learned
+1. **State must be explicit from the start**: If moderation is part of the flow, design the event model around it from day one. retrofitting moderation is painful.
+2. **Decouple early**: Separating media from application logic saved countless hours of debugging. Each layer can fail independently without cascading.
+3. **Test with real conditions**: Local development doesn't simulate 10K concurrent connections. Load testing revealed issues I never would have found otherwise.
+## What's Next
+Flux is live at [echo-rizz.vercel.app](https://echo-rizz.vercel.app/). The codebase is open source on [GitHub](https://github.com/Rishit-Sinha10/P1).
+Future improvements:
+- Adaptive bitrate switching based on viewer bandwidth
+- Recording and replay functionality
+- Monetization integration
+- AI-powered content moderation
+---
+*Built with React, Socket.IO, Node-Media-Server, and MongoDB.*
