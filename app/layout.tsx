@@ -3,9 +3,8 @@ import "./globals.css";
 import { Providers } from "./providers";
 import Navbar from "./components/navbar";
 import Footer from "./components/footer";
-
+import { Analytics } from "@vercel/analytics/next";
 const SITE_URL = "https://www.rishitsinha.online";
-
 export const metadata: Metadata = {
   title: {
     default: "Rishit Sinha — Full-Stack Developer",
@@ -36,7 +35,7 @@ export const metadata: Metadata = {
       "Full-stack Developer building real-time systems and production web apps. Final-year CS student with startup experience.",
     images: [
       {
-        url: "/opengraph-image.png",
+        url: "/images/og_image.png",
         width: 1200,
         height: 630,
         alt: "Rishit Sinha — Full-Stack Developer",
@@ -100,6 +99,10 @@ export default function RootLayout({
   return (
     <html lang="en" className="h-full antialiased" suppressHydrationWarning>
       <head>
+        <meta
+          name="google-site-verification"
+          content="gkLEiSgK5djbrW0Bj1fl9WkZs-rz8AuCjB3-HcIR1mk"
+        />
         <link
           rel="stylesheet"
           href="https://api.fontshare.com/v2/css?f[]=satoshi@400,500,700,900&display=swap"
@@ -108,11 +111,21 @@ export default function RootLayout({
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
         />
+        <script
+          async
+          src="https://www.googletagmanager.com/gtag/js?id=G-WD0L5T6NXG"
+        ></script>
+        <script>
+          window.dataLayer = window.dataLayer || []; function gtag()
+          dataLayer.push(arguments); gtag('js', new Date()); gtag('config',
+          'G-WD0L5T6NXG');
+        </script>
       </head>
       <body className="min-h-full flex flex-col overflow-x-hidden bg-[var(--background)] text-[var(--foreground)] transition-colors">
         <a href="#main-content" className="skip-link">
           Skip to content
         </a>
+        <Analytics/>
         <Providers>
           <Navbar />
           <main id="main-content" className="flex-1">
