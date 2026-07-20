@@ -135,14 +135,14 @@ export default function Portfolio() {
       <div className="mt-4 flex flex-wrap items-center gap-2.5 sm:gap-3">
         <a
           href="/Rishit_Resume.pdf"
-          className="inline-flex items-center gap-2 rounded-lg border border-[var(--border)] bg-[var(--surface)] px-4 py-2.5 text-sm font-medium text-[var(--foreground)] transition hover:border-[var(--accent)] hover:text-[var(--accent)]"
+          className="inline-flex items-center gap-2 rounded-lg border border-[var(--border)] bg-[var(--surface)] px-4 py-2.5 text-sm font-medium text-[var(--foreground)]"
         >
           Resume
           <FileDescriptionIcon size={10} className="h-4 w-4" />
         </a>
         <a
           href="mailto:Sinharishit04@gmail.com"
-          className="inline-flex items-center gap-2 rounded-lg bg-[var(--accent)] px-4 py-2.5 text-sm font-semibold  transition hover:bg-[var(--accent-hover)]"
+          className="inline-flex items-center gap-2 rounded-lg bg-[var(--surface)] px-4 py-2.5 text-sm font-semibold"
         >
           Get in touch
           <SendIcon size={10} className="h-4 w-4" />

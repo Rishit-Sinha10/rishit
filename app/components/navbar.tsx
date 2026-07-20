@@ -6,7 +6,7 @@ import { useState, useEffect, useMemo } from "react";
 import { Moon, Sun, Menu, X } from "lucide-react";
 import { useTheme } from "next-themes";
 import { cn } from "../../lib/utils";
-import Proof from "@/public/Images/proof.avif";
+import Proof from "../../public/Images/proof.avif";
 import { useActiveSection } from "../hooks/useActiveSection";
 
 const NAV_LINKS = [
@@ -51,7 +51,7 @@ export default function Navbar() {
 
   return (
     <nav
-      className="sticky top-0 z-50 border-b border-[var(--border)] bg-[var(--background)]/80 backdrop-blur-md"
+      className="sticky top-0 z-50 border-b border-[var(--border)] bg-[var(--background)]/80"
       aria-label="Main navigation"
     >
       <div className="mx-auto flex max-w-[768px] items-center justify-between px-5 py-3">
@@ -59,8 +59,8 @@ export default function Navbar() {
           <Image
             src={Proof}
             alt="Rishit Image"
-            width={72}
-            height={72}
+            width={36}
+            height={36}
             className="rounded-full object-cover"
           />
           <div></div>
@@ -80,9 +80,6 @@ export default function Navbar() {
                   href={link.href}
                   className={cn(
                     "rounded-md px-2.5 py-1.5 text-[13px] font-medium transition no-underline",
-                    isActive
-                      ? "bg-[var(--accent-light)] text-[var(--accent)]"
-                      : "text-[var(--muted)] hover:text-[var(--foreground)]",
                   )}
                 >
                   {link.label}
@@ -98,8 +95,7 @@ export default function Navbar() {
             className={cn(
               "rounded-full border p-2 transition",
               mounted && resolvedTheme === "dark"
-                ? "border-[var(--accent)] bg-[var(--accent-light)] text-[var(--accent)]"
-                : "border-[var(--border)] text-[var(--muted)] hover:border-[var(--accent)] hover:text-[var(--accent)]",
+  
             )}
             aria-label={
               resolvedTheme === "dark"

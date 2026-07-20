@@ -1,10 +1,16 @@
 "use client";
-import { useRef } from "react";
+import { useEffect, useRef, useState } from "react";
 import CalendarHeatmap from "react-calendar-heatmap";
 import { Tooltip } from "react-tooltip";
 import "react-calendar-heatmap/dist/styles.css";
 import "react-tooltip/dist/react-tooltip.css";
-
+const GITHUB_HANDLE = "Rishit-Sinha10";
+const GITHUB_CONTRIBUTIONS_ENDPOINT =
+  "https://github-contributions-api.jogruber.de/v4";
+type HeatmapValue = { date: string; count: number };
+type LiveContributionResponse = {
+  contributions?: Array<{ date?: string; count?: number; level?: number }>;
+};
 export const sampleData = [
   { date: "2026-01-01", count: 1 },
   { date: "2026-01-02", count: 2 },
@@ -198,16 +204,51 @@ export const sampleData = [
   { date: "2026-07-09", count: 0 },
   { date: "2026-07-10", count: 4 },
 ];
-
 export default function ContributionGraph({ values = sampleData }) {
   const scrollRef = useRef<HTMLDivElement>(null);
+  const [activityValues, setActivityValues] = useState<HeatmapValue[]>(() =>
+    Array.isArray(values) && values.length > 0 ? values : sampleData,
+  );
+  useEffect(() => {
+    let isMounted = true;
+    const loadLiveContributions = async () => {
+      try {
+        const response = await fetch(
+          `${GITHUB_CONTRIBUTIONS_ENDPOINT}/${GITHUB_HANDLE}`,
+        );
+        if (!response.ok) {
+          throw new Error(`GitHub contributions request failed: ${response.status}`);
+        }
+        const data = (await response.json()) as LiveContributionResponse;
+        const contributions = Array.isArray(data.contributions)
+          ? data.contributions
+              .filter((item) => Boolean(item?.date))
+              .map((item) => ({
+                date: item.date as string,
+                count: Number(item.count ?? 0),
+              }))
+          : [];
+        if (isMounted && contributions.length > 0) {
+          setActivityValues(contributions);
+        }
+      } catch {
+        if (isMounted) {
+          setActivityValues(
+            Array.isArray(values) && values.length > 0 ? values : sampleData,
+          );
+        }
+      }
+    };
+    loadLiveContributions();
+    return () => {
+      isMounted = false;
+    };
+  }, [values]);
 
   const today = new Date();
   const startDate = new Date(today);
   startDate.setFullYear(today.getFullYear() - 1);
 
-  const activityValues =
-    Array.isArray(values) && values.length > 0 ? values : sampleData;
   const totalContributions = activityValues.reduce(
     (sum: number, item: { count?: number }) => sum + (item.count ?? 0),
     0,
@@ -314,7 +355,6 @@ export default function ContributionGraph({ values = sampleData }) {
             <span className="hidden sm:inline">More</span>
           </div>
         </div>
-
         <Tooltip anchorSelect="[data-tooltip-content]" />
       </div>
     </section>

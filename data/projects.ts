@@ -129,8 +129,10 @@ export const PROJECTS: ProjectCaseStudy[] = [
 });`,
     },
     results: [
-      "Core flow is usable as a daily habit rather than a quarterly chore.",
-      "Taught me that a good finance experience depends on clarity and pacing, not features.",
+      "Achieved a Lighthouse Performance score of 90/100",
+     "Scored 96/100 for Accessibility and 100/100 for SEO",
+     "First Contentful Paint (FCP): 0.9 s",
+     "Largest Contentful Paint (LCP): 1.6 s",
     ],
     liveUrl: "https://finan-cino.vercel.app/",
     githubUrl: "https://github.com/Rishit-Sinha10/Financcino",
@@ -210,8 +212,10 @@ export const PROJECTS: ProjectCaseStudy[] = [
       ],
     },
     results: [
-      "Surfaced a simpler mental model for planning study time.",
-      "Main lesson: the product needs to stay quiet and predictable, not feature-heavy.",
+      "Achieved a Lighthouse Performance score of 96/100",
+     "Scored 97/100 for Accessibility and 91/100 for SEO",
+     "Speed Index (SI): 1.1 s",
+     "First Contentful Paint (LCP): 0.9 s",
     ],
     liveUrl: "https://lumina-nine-tan.vercel.app/",
     githubUrl: "https://github.com/Rishit-Sinha10/NoteMog",
@@ -330,7 +334,6 @@ export const PROJECTS: ProjectCaseStudy[] = [
       {
         name: "Socket.IO",
         slug: "socketdotio",
-        color: "000000",
         category: "backend",
       },
       { name: "Mongoose", slug: "mongoosedotws", category: "database" },
@@ -346,7 +349,7 @@ export const PROJECTS: ProjectCaseStudy[] = [
     title: "ZecoAI",
     tagline:
       "A collaborative coding environment with built-in AI assistance and sandboxed execution.",
-    status: "In dev",
+    status: "Live",
     summary: [
       "ZecoAI is a full-stack, browser-based code editor that combines the editing experience of VS Code with AI-assisted code review, instant multi-language code execution, and persistent AI chat history — all backed by a cloud database.It was built to explore how developers could get real-time feedback and run code without leaving the browser, while keeping their project history and conversations saved across sessions.The project spans a complete product surface: authentication, project/file management, a Monaco-based editor, a code execution pipeline, and an AI chat system — making it a strong demonstration of end-to-end full-stack ownership rather than a single isolated feature",
     ],
@@ -392,8 +395,10 @@ export const PROJECTS: ProjectCaseStudy[] = [
       ],
     },
     results: [
-      "Best AI features reduce setup overhead, not add UI surface area.",
-      "Lesson: focus on the smallest useful loop before expanding the product.",
+      "41 unique users explored the platform",
+      "290 total page views across the application",
+      "7.1 pages viewed per visitor, indicating deep feature exploration",
+      "46% bounce rate"
     ],
     liveUrl: "https://zecoai.vercel.app/",
     githubUrl: "https://github.com/Rishit-Sinha10/ZecoAI",
@@ -410,16 +415,87 @@ export const PROJECTS: ProjectCaseStudy[] = [
       {
         name: "Express",
         slug: "express",
-        color: "000000",
         category: "backend",
       },
       { name: "MongoDB", slug: "mongodb", category: "database" },
       {
         name: "Mongoose",
         slug: "mongoosedotws",
-        color: "880000",
         category: "backend",
       },
     ],
+  },
+  {
+  id: "TuxHuzz",
+  title: "TuxHuzz",
+  tagline:
+    "A Clash Royale companion app that tracks player stats, analyzes decks, and roasts your gameplay with AI.",
+  status: "Live",
+  summary: [
+    "TuxHuzz is a full-stack Clash Royale stats tracker and deck analyzer built on top of the official Clash Royale API. Users can look up any player by tag to see live trophy counts, level, win/loss history, and battle stats, or pull up clan info and compare members. Beyond raw stats, the app runs an 8-card deck through a rule-based analysis engine that scores elixir curve, win conditions, and air/splash coverage, then surfaces strengths, weaknesses, and concrete suggestions. A lighter, more playful feature — AI 'roasts' — uses Groq to generate personalized (and increasingly savage) commentary on a player's performance based on their real stats.",
+  ],
+  problem: [
+    "A Flask/Python backend that talks directly to the official Clash Royale API for players, clans, and card data.",
+    "A rule-based DeckAnalyzer service that scores an 8-card deck against configurable thresholds (elixir cost, air defense, splash damage, win-condition count) and generates human-readable suggestions.",
+    "A Groq-powered 'roast' endpoint with selectable intensity (fun / savage / nuclear) that turns a player's win rate, trophy history, and three-crown rate into personalized AI commentary.",
+    "JWT-based authentication (Flask-JWT-Extended) plus a SQL database (via SQLAlchemy, supporting MySQL/Postgres) to persist users and card data.",
+  ],
+  solution:
+    "In-game Clash Royale stats screens are limited — players can't easily see deep trends in their own stats, get objective feedback on their deck composition, or share a fun, personalized summary of their play. Serious players and casual clashers alike often bounce between third-party stat sites, spreadsheets, and Discord chats to figure out what's actually wrong with a deck, with no single tool tying stats, analysis, and personality together. TuxHuzz unifies player/clan lookup, rule-based deck analysis, and AI-generated commentary into one dashboard, so anyone can paste in a player tag and immediately get both hard numbers and an easy-to-digest verdict.",
+  features: [
+    {
+      label: "Player & clan lookup",
+      detail:
+        "Search any player tag to view live trophies, level, win/loss record, and clan membership pulled straight from the Clash Royale API.",
+    },
+    {
+      label: "Rule-based deck analyzer",
+      detail:
+        "Scores an 8-card deck on elixir curve, win conditions, and air/splash coverage, returning strengths, weaknesses, and an overall rating.",
+    },
+    {
+      label: "AI-powered roasts",
+      detail:
+        "Groq-generated, stat-driven roasts of a player's performance with selectable intensity: fun, savage, or nuclear.",
+    },
+    {
+      label: "Stats dashboard & charts",
+      detail:
+        "React + Chart.js dashboard visualizing win rate, trophy trends, and deck metrics at a glance.",
+    },
+  ],
+  architecture: {
+    flow: [
+      "TuxHuzz follows a decoupled architecture with a React (Vite) frontend calling a Flask REST API backend.",
+      "The frontend is built with React, React Router, and Chart.js/react-chartjs-2 for the stats dashboard and deck charts.",
+      "The Flask backend is organized around blueprints — auth, players, cards, and roast — each handling a distinct slice of functionality.",
+      "Flask-JWT-Extended handles authentication and protects routes, while SQLAlchemy (MySQL/Postgres-compatible) persists users and seeded card data.",
+      "A ClashRoyaleAPI service wraps calls to the official Clash Royale API for player, clan, and card data.",
+      "A DeckAnalyzer service applies configurable thresholds to score deck composition and generate suggestions.",
+      "A roast service calls the Groq API to turn a player's real stats into personalized AI commentary, with a graceful fallback message if Groq is unavailable.",
+      "This separation keeps game-data fetching, analysis logic, and AI generation independently testable while the frontend stays a thin presentation layer.",
+    ],
+  },
+  results: [
+        "29 git clones in the last 14 days",
+        "20 unique cloners",
+        "6 total repo page views in the last 14 days",
+        "1 unique visitor",
+  ],
+  liveUrl: "https://deploysus.vercel.app/",
+  githubUrl: "https://github.com/Rishit-Sinha10/clash_royale",
+  accent: "#9ca3af",
+  skills: [
+    { name: "React", slug: "react", category: "frontend" },
+    { name: "Vite", slug: "vite", category: "frontend" },
+    { name: "Chart.js", slug: "chartdotjs", category: "frontend" },
+    { name: "React Router", slug: "reactrouter", category: "frontend" },
+    { name: "Vercel", slug: "vercel", category: "devops" },
+    { name: "Python", slug: "python", category: "backend" },
+    { name: "Flask", slug: "flask", category: "backend" },
+    { name: "Render", slug: "Render", category: "devops" },
+    { name: "MySQL", slug: "mysql", category: "database" },
+    { name: "SQLAlchemy", slug: "sqlalchemy", category: "backend" },
+   ],
   },
 ];
