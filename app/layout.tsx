@@ -4,6 +4,7 @@ import { Providers } from "./providers";
 import Navbar from "./components/navbar";
 import Footer from "./components/footer";
 import { Analytics } from "@vercel/analytics/next";
+import TransitionLayout from "./components/transitionpage";
 const SITE_URL = "https://www.rishitsinha.online";
 export const metadata: Metadata = {
   title: {
@@ -111,15 +112,6 @@ export default function RootLayout({
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
         />
-        <script
-          async
-          src="https://www.googletagmanager.com/gtag/js?id=G-WD0L5T6NXG"
-        ></script>
-        <script>
-          window.dataLayer = window.dataLayer || []; function gtag()
-          dataLayer.push(arguments); gtag('js', new Date()); gtag('config',
-          'G-WD0L5T6NXG');
-        </script>
       </head>
       <body className="min-h-full flex flex-col overflow-x-hidden bg-[var(--background)] text-[var(--foreground)] transition-colors">
         <a href="#main-content" className="skip-link">
@@ -127,11 +119,13 @@ export default function RootLayout({
         </a>
         <Analytics/>
         <Providers>
+          <TransitionLayout>
           <Navbar />
           <main id="main-content" className="flex-1">
             {children}
           </main>
           <Footer />
+          </TransitionLayout>
         </Providers>
       </body>
     </html>
