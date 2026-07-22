@@ -5,6 +5,7 @@ import Navbar from "./components/navbar";
 import Footer from "./components/footer";
 import { Analytics } from "@vercel/analytics/next";
 import TransitionLayout from "./components/transitionpage";
+import { SpeedInsights } from "@vercel/speed-insights/next"
 const SITE_URL = "https://www.rishitsinha.online";
 export const metadata: Metadata = {
   title: {
@@ -118,6 +119,7 @@ export default function RootLayout({
           Skip to content
         </a>
         <Analytics/>
+        <SpeedInsights/>
         <Providers>
           <TransitionLayout>
           <Navbar />
