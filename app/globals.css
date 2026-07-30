@@ -16,11 +16,6 @@
   --accent: #ffffff;
   --accent-hover: #333333;
   --accent-light: rgba(0, 0, 0, 0.04);
-
-  /* Typography */
-  --font-sans: "Satoshi", "Inter", system-ui, -apple-system, sans-serif;
-  --font-mono: "Geist Mono", "SF Mono", "Fira Code", monospace;
-
   /* Spacing */
   --section-gap: 72px;
   --content-max: 768px;
@@ -44,8 +39,8 @@
   --color-foreground: var(--foreground);
   --color-accent: var(--accent);
   --color-accent-hover: var(--accent-hover);
-  --font-sans: var(--font-sans);
-  --font-mono: var(--font-mono);
+  --font-sans: var(--font-geist);
+  --font-mono: var(--font-geist-mono);
 }
 
 /* ═══════════════════════════════════════════════
@@ -63,7 +58,7 @@ body {
   background: var(--background);
   color: var(--foreground);
   font-family: var(--font-sans);
-  font-size: 18px;
+  font-size: 21px;
   line-height: 1.8;
   font-weight: 400;
   text-rendering: optimizeLegibility;
@@ -121,6 +116,7 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .heading-hero {
+  font-family: var(--font-instrument-serif);
   font-size: clamp(24px, 4vw, 40px);
   font-weight: 800;
   letter-spacing: -0.04em;

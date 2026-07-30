@@ -6,7 +6,24 @@ import Footer from "./components/footer";
 import { Analytics } from "@vercel/analytics/next";
 import TransitionLayout from "./components/transitionpage";
 import { SpeedInsights } from "@vercel/speed-insights/next"
+import { Instrument_Serif, Geist, Geist_Mono } from 'next/font/google';
 const SITE_URL = "https://www.rishitsinha.online";
+const instrumentSerif = Instrument_Serif({
+  weight: '400',
+  subsets: ['latin'],
+  variable: '--font-instrument-serif',
+  display: 'swap',
+});
+const geist = Geist({
+  subsets: ['latin'],
+  variable: '--font-geist',
+  display: 'swap',
+});
+const geistMono = Geist_Mono({
+  subsets: ['latin'],
+  variable: '--font-geist-mono',
+  display: 'swap',
+});
 export const metadata: Metadata = {
   title: {
     default: "Rishit Sinha — Full-Stack Developer",
@@ -99,15 +116,11 @@ export default function RootLayout({
   };
 
   return (
-    <html lang="en" className="h-full antialiased" suppressHydrationWarning>
+    <html lang="en" className={`${instrumentSerif.variable} ${geist.variable} ${geistMono.variable} h-full antialiased`} suppressHydrationWarning>
       <head>
         <meta
           name="google-site-verification"
           content="gkLEiSgK5djbrW0Bj1fl9WkZs-rz8AuCjB3-HcIR1mk"
-        />
-        <link
-          rel="stylesheet"
-          href="https://api.fontshare.com/v2/css?f[]=satoshi@400,500,700,900&display=swap"
         />
         <script
           type="application/ld+json"
