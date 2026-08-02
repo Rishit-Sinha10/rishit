@@ -559,7 +559,7 @@ export const PROJECTS: ProjectCaseStudy[] = [
     "0 open issues or pull requests",
     "No live deployment yet — pre-release / portfolio-stage build",
   ],
-  liveUrl: null,
+  liveUrl: "https://vrtx-gamma.vercel.app",
   githubUrl: "https://github.com/Rishit-Sinha10/VRTX",
   accent: "#059669",
   skills: [
