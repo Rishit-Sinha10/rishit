@@ -21,7 +21,7 @@ export type ProjectCaseStudy = {
   };
   codeSnippet?: { language: string; filename: string; code: string };
   results: string[];
-  liveUrl: string;
+  liveUrl: string | null;
   githubUrl: string;
   accent: string;
   skills: Skill[];
@@ -498,4 +498,77 @@ export const PROJECTS: ProjectCaseStudy[] = [
     { name: "SQLAlchemy", slug: "sqlalchemy", category: "backend" },
    ],
   },
+  {
+  id: "VRTX",
+  title: "VRTX",
+  tagline:
+    "A premium football tactical workspace for building, saving, and sharing formation lineups on an interactive pitch.",
+  status:"In dev",
+  summary: [
+    "VRTX is an early-stage, full-stack football platform with a polished Next.js frontend and an Express backend split into separate workspaces. The current build ships a responsive football pitch with a formation-based lineup builder (7 formations, drag-and-drop player placement), with Firebase auth at the core and a protected API boundary between the client and the Express API. The long-term vision is a differentiated product that combines modern sports UX with coaching-level tactical depth.",
+  ],
+  problem: [
+    "Football fans, coaches, and analysts lack a fast, polished way to build and tweak tactical lineups and share them with others.",
+    "Existing tactical editors feel clunky, dated, or bloated, with no premium, SaaS-grade experience designed around quick formation switching and visual player placement.",
+    "A Next.js 16 App Router frontend (React 19, Tailwind CSS v4) driving an interactive, drag-and-drop pitch UI.",
+    "An Express 5 (ESM) backend, kept in a separate workspace, exposing a protected API boundary gated by Firebase-verified auth.",
+  ],
+  solution:
+    "A full-stack web app that puts an interactive football pitch at the center: users pick a formation, place players visually, and (on the roadmap) save, share, and revisit lineups. The architecture is built to scale cleanly from a lineup editor into a full tactical workspace with teams, player search, shareable links, and future real-time collaboration and AI insights.",
+  features: [
+    {
+      label: "Interactive pitch",
+      detail:
+        "A responsive, visual football pitch that serves as the core surface for building and editing lineups.",
+    },
+    {
+      label: "Formation selector",
+      detail:
+        "7 formation presets — 4-3-3, 4-3-3 Attack, 4-3-3 Holding, 4-4-2, 4-5-1, 4-2-1-3, and 4-2-3-1.",
+    },
+    {
+      label: "Drag-and-drop lineup building",
+      detail:
+        "Players can be placed and repositioned directly on the pitch to build out a tactical setup.",
+    },
+    {
+      label: "Firebase-gated API",
+      detail:
+        "Firebase Authentication on the client backs a protected API boundary, so only verified users can reach gated Express routes.",
+    },
+    {
+      label: "Roadmap",
+      detail:
+        "Saved lineups, custom teams, player search, shareable lineup URLs, real-time collaboration, and AI-driven tactical analysis.",
+    },
+  ],
+  architecture: {
+    flow: [
+      "VRTX is a monorepo with two workspaces: /frontend (Next.js 16 App Router, React 19, Tailwind CSS v4) and /backend (Express 5, ESM).",
+      "Firebase handles authentication on the client, issuing credentials that gate access to the Express API.",
+      "A protected API boundary sits between the Next.js frontend and the Express backend so only authenticated requests reach sensitive routes.",
+      "The frontend is organized around a product-oriented structure — app, components, features, lib, services, and types — supporting the interactive pitch and formation logic.",
+      "Bun is used as the package manager and lockfile across both workspaces.",
+      "The planned data layer is Supabase + Prisma + PostgreSQL, with Vercel targeted for the frontend and Render for the API once deployed.",
+    ],
+  },
+  results: [
+    "5 commits",
+    "1 star",
+    "0 forks",
+    "0 open issues or pull requests",
+    "No live deployment yet — pre-release / portfolio-stage build",
+  ],
+  liveUrl: null,
+  githubUrl: "https://github.com/Rishit-Sinha10/VRTX",
+  accent: "#059669",
+  skills: [
+    { name: "Next.js", slug: "nextdotjs", category: "frontend" },
+    { name: "Tailwind CSS", slug: "tailwindcss", category: "frontend" },
+    { name: "Node.js", slug: "nodedotjs", category: "backend" },
+    { name: "Express", slug: "express", category: "backend" },
+    { name: "Firebase", slug: "firebase", category: "backend" },
+    { name: "Bun", slug: "bun", category: "devops" },
+  ],
+},
 ];
