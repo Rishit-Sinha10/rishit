@@ -21,7 +21,7 @@ export type ProjectCaseStudy = {
   };
   codeSnippet?: { language: string; filename: string; code: string };
   results: string[];
-  liveUrl: string | null;
+  liveUrl: string;
   githubUrl: string;
   accent: string;
   skills: Skill[];
