@@ -144,7 +144,6 @@ export const PROJECTS: ProjectCaseStudy[] = [
       { name: "Tailwindcss", slug: "Tailwindcss", category: "frontend" },
       { name: "Axios", slug: "Axios", category: "frontend" },
       { name: "Mongoose", slug: "mongoosedotws", category: "backend" },
-      { name: "Jest", slug: "Jest", category: "backend" },
       { name: "MongoDB", slug: "mongodb", category: "database" },
       { name: "Clerk", slug: "clerk", category: "devops" },
       { name: "Vercel", slug: "vercel", category: "devops" },
@@ -279,7 +278,7 @@ export const PROJECTS: ProjectCaseStudy[] = [
     architecture: {
       flow: [
         "Flux uses a layered architecture that separates media streaming from application logic, allowing both services to scale independently.",
-        "The client is built with React 19, Vite, Tailwind CSS, Chakra UI, Axios, and the Socket.IO client for responsive real-time interactions.",
+        "The client is built with React 19, Vite, Tailwind CSS,Axios, and the Socket.IO client for responsive real-time interactions.",
         "Users interact with the Express.js API over HTTPS for authentication, stream management, payments, and analytics, while WebSockets power live chat and real-time updates.",
         "A dedicated media server powered by Node-Media-Server receives RTMP streams, processes them with FFmpeg, and converts them into HLS segments for adaptive playback.",
         "The API server provides REST endpoints, Socket.IO communication, Clerk/JWT authentication with role-based access control, and rate limiting for security and reliability.",
@@ -329,7 +328,6 @@ export const PROJECTS: ProjectCaseStudy[] = [
       { name: "React", slug: "react", category: "frontend" },
       { name: "Vite", slug: "Vite", category: "frontend" },
       { name: "Axios", slug: "Axios", category: "frontend" },
-      { name: "ChakraUI", slug: "ChakraUI", category: "frontend" },
       { name: "Tailwindcss", slug: "Tailwindcss", category: "frontend" },
       {
         name: "Socket.IO",
