@@ -4,13 +4,11 @@ import { ArrowUpRight } from "lucide-react";
 import Link from "next/link";
 import { Reveal } from "../pages/reavel";
 import { PROJECTS, type Skill } from "../../data/projects";
-
 function iconUrl(skill: Skill) {
   return skill.color
     ? `https://cdn.simpleicons.org/${skill.slug}/${skill.color}`
     : `https://cdn.simpleicons.org/${skill.slug}`;
 }
-
 function SkillBadge({ skill }: { skill: Skill }) {
   return (
     <div className="group relative flex">
@@ -33,7 +31,6 @@ function SkillBadge({ skill }: { skill: Skill }) {
     </div>
   );
 }
-
 function StatusDot({ status, accent }: { status: string; accent: string }) {
   return (
     <span className="inline-flex items-center gap-1.5 text-[11px] font-medium uppercase tracking-[0.14em]">
@@ -47,7 +44,6 @@ function StatusDot({ status, accent }: { status: string; accent: string }) {
     </span>
   );
 }
-
 function ProjectOverviewCard({ project }: { project: (typeof PROJECTS)[0] }) {
   return (
     <Link href={`/work/${project.id}`} className="block w-full no-underline">
@@ -74,7 +70,6 @@ function ProjectOverviewCard({ project }: { project: (typeof PROJECTS)[0] }) {
     </Link>
   );
 }
-
 export function Work() {
   return (
     <section
@@ -100,5 +95,4 @@ export function Work() {
     </section>
   );
 }
-
 export default Work;

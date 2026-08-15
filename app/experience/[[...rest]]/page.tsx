@@ -1,8 +1,6 @@
 "use client";
-
-import { Reveal } from "./reavel";
+import { Reveal } from "../../pages/reavel";
 import { motion } from "motion/react";
-
 const EXPERIENCES = [
   {
     id: "01",
@@ -28,7 +26,7 @@ const EXPERIENCES = [
   },
 ];
 
-export function Experience() {
+export default function Experience() {
   return (
     <section
       id="experience"

@@ -13,8 +13,8 @@ const NAV_LINKS = [
   { label: "Home", href: "/", section: null },
   { label: "About", href: "/about", section: null },
   { label: "Blog", href: "/blog", section: null },
-  { label: "Projects", href: "/#work", section: "work" },
-  { label: "Experience", href: "/#experience", section: "experience" },
+  { label: "Projects", href: "/projects", section: "null" },
+  { label: "Experience", href: "/experience", section:null},
 ];
 
 export default function Navbar() {
