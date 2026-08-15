@@ -54,9 +54,10 @@ export const metadata: Metadata = {
       "Full-stack Developer building real-time systems and production web apps. Final-year CS student with startup experience.",
     images: [
       {
-        url: "/images/og_image.png",
-        width: 1200,
-        height: 630,
+        url: "/Images/og-image.png",
+        width: 1917,
+        height: 909,
+        type: "image/png",
         alt: "Rishit Sinha — Full-Stack Developer",
       },
     ],
@@ -66,7 +67,7 @@ export const metadata: Metadata = {
     title: "Rishit Sinha — Full-Stack Engineer",
     description:
       "Full-stack Developer building real-time systems and production web apps.",
-    images: ["public/Images/og_image.png"],
+    images: ["/Images/og-image.png"],
   },
   robots: {
     index: true,
