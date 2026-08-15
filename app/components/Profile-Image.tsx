@@ -1,5 +1,4 @@
 "use client";
-
 import Image,{ type StaticImageData } from "next/image";
 import { useState } from "react";
 import { cn } from "../../lib/utils";

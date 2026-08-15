@@ -27,7 +27,8 @@ import { LinkPreview } from "../components/link_preview";
 import SendIcon from "../components/send-icon";
 import { Signature } from "../components/Signature";
 import { motion } from "framer-motion";
-
+import Image from "next/image";
+import Sign from "../../public/Images/file.svg";
 const ContributionGraph = dynamic(() => import("../pages/github"), {
   ssr: false,
   loading: () => (
@@ -100,24 +101,23 @@ function SkillBadge({ name, icon }: { name: string; icon: SimpleIcon }) {
 export default function Portfolio() {
   return (
     <section className="mx-auto flex w-full max-w-4xl flex-col px-4 py-6 sm:px-6 md:px-8 lg:px-10">
-      <motion.div
-        initial={{ opacity: 0, y: 36 }}
-        animate={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.8, delay: 0.1 }}
-        className="flex flex-col items-start gap-4"
-      >
-        <Signature className="mx-0" />
-      </motion.div>
+      <div className="flex justify-center">
+      <Image
+        src={Sign}
+        alt="Rishit Sinha Signature"
+        height={400}
+        width={400}
+      />
+      </div>
       <p className="mt-4 text-left text-sm leading-6 text-[var(--muted)] sm:text-base sm:leading-7">
-        I’m Rishit Sinha, a Final Year Computer Science student
-        building products that turn ideas into working software — from polished
-        frontend experiences to full-stack applications and AI-powered tools.
-        I’ve worked across frontend and full-stack development through
-        internships and independent projects, and I’m currently going deeper
-        into backend engineering, system design, and AI while building products
-        of my own. I care about the details users notice, the architecture
-        developers maintain, and most importantly, shipping something that
-        actually works.
+        I’m Rishit Sinha, a Final Year Computer Science student building
+        products that turn ideas into working software — from polished frontend
+        experiences to full-stack applications and AI-powered tools. I’ve worked
+        across frontend and full-stack development through internships and
+        independent projects, and I’m currently going deeper into backend
+        engineering, system design, and AI while building products of my own. I
+        care about the details users notice, the architecture developers
+        maintain, and most importantly, shipping something that actually works.
       </p>
       <div className="mt-4 text-left text-sm leading-6 text-[var(--muted)] sm:text-base sm:leading-7">
         I’ve worked across frontend and full-stack development through
