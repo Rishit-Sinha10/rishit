@@ -2,33 +2,28 @@
 import { Reveal } from "../pages/reavel";
 import Link from "next/link";
 import { LinkPreview } from "../components/link_preview";
-import { ProfileImage } from "../components/Profile-Image";
 import { Signature } from "../components/Signature";
-import Img from "../../public/Images/proof.avif";
+import { ImageSlideshow, ABOUT_SLIDES } from "../components/image-slideshow";
 export default function About() {
   return (
     <section className="mx-auto w-full max-w-[768px] px-5 py-12">
       <Reveal>
-        <div className="flex items-end justify-between gap-12">
+        <div className="flex flex-col items-start gap-6 sm:flex-row sm:items-end sm:justify-between sm:gap-12">
           <div>
             <p className="text-label mb-2">About</p>
             <h1 className="heading-section text-[var(--foreground)]">
               The long version
             </h1>
           </div>
-
-          <div className="relative size-10 shrink-0 overflow-hidden rounded-2xl ring-1 ring-border sm:size-20">
-            <ProfileImage
-              src={Img}
-              alt="Rishit Sinha Image"
-              sizes="12px"
-              className="absolute inset-0"
-            />
-          </div>
+          <ImageSlideshow
+            slides={ABOUT_SLIDES}
+            layout="side"
+            className="w-full max-w-[120px] sm:w-[100px]"
+          />
         </div>
       </Reveal>
 
-      <div className="flex flex-col gap-12">
+      <div className="mt-12 flex flex-col gap-12">
         {/* Where I started */}
         <Reveal delay={0.05}>
           <Section label="Where I started">

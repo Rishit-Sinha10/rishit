@@ -6,6 +6,14 @@ const nextConfig: NextConfig = {
   experimental: {
     optimizePackageImports: ["simple-icons", "lucide-react"],
   },
+  turbopack: {
+    rules: {
+      "*.svg": {
+        loaders: ["@svgr/webpack"],
+        as: "*.js",
+      },
+    },
+  },
 };
 
 const withMDX = createMDX({

@@ -19,16 +19,23 @@ import {
   siGit,
   siGithub,
 } from "simple-icons";
-import { type SkillCategory } from "../../data/projects";
+import { type SkillCategory, PROJECTS } from "../../data/projects";
 import type { SimpleIcon } from "simple-icons";
 import dynamic from "next/dynamic";
 import FileDescriptionIcon from "../components/file";
 import { LinkPreview } from "../components/link_preview";
 import SendIcon from "../components/send-icon";
-import { Signature } from "../components/Signature";
+import { ProfileImage } from "../components/Profile-Image";
+import { ProjectOverviewCard } from "../components/project-card";
 import { motion } from "framer-motion";
-import Image from "next/image";
-import Sign from "../../public/Images/file.svg";
+import Proof from "../../public/Images/image.png";
+import GmailIcon from "../components/gmail-icon";
+import GithubIcon from "../components/github";
+import { XIcon } from "lucide-react";
+import { ArrowUpRight } from "lucide-react";
+import TwitterXIcon from "../components/x-icon";
+import DiscordIcon from "../components/discord";
+import LinkedinIcon from "../components/linkedin";
 const ContributionGraph = dynamic(() => import("../pages/github"), {
   ssr: false,
   loading: () => (
@@ -101,13 +108,16 @@ function SkillBadge({ name, icon }: { name: string; icon: SimpleIcon }) {
 export default function Portfolio() {
   return (
     <section className="mx-auto flex w-full max-w-4xl flex-col px-4 py-6 sm:px-6 md:px-8 lg:px-10">
-      <div className="flex justify-center">
-      <Image
-        src={Sign}
-        alt="Rishit Sinha Signature"
-        height={400}
-        width={400}
-      />
+      <div className="mx-auto w-full max-w-[900px]">
+        <div className="relative h-[160px] w-full overflow-hidden">
+          <ProfileImage
+            src={Proof}
+            alt="Rishit Sinha"
+            sizes="100vw"
+            priority
+            className="absolute inset-0 h-full w-full"
+          />
+        </div>
       </div>
       <p className="mt-4 text-left text-sm leading-6 text-[var(--muted)] sm:text-base sm:leading-7">
         I’m Rishit Sinha, a Final Year Computer Science student building
@@ -140,19 +150,75 @@ export default function Portfolio() {
       </div>
       <div className="mt-4 flex flex-wrap items-center gap-2.5 sm:gap-3">
         <a
-          href="/Rishit_Resume.pdf"
+          href="https://cal.com/rishit-sinha-eku02v/30min?overlayCalendar=true"
           className="inline-flex items-center gap-2 rounded-lg border border-[var(--border)] bg-[var(--surface)] px-4 py-2.5 text-sm font-medium text-[var(--foreground)]"
+        >
+          Book A Call
+          <span>
+
+          </span>
+          <SendIcon size={10} className="h-4 w-4" />
+        </a>
+        <a
+          href="/Resume.pdf"
+          className="inline-flex items-center gap-2 rounded-lg bg-[var(--surface)] px-4 py-2.5 text-sm font-semibold"
         >
           Resume
           <FileDescriptionIcon size={10} className="h-4 w-4" />
         </a>
-        <a
-          href="mailto:Sinharishit04@gmail.com"
-          className="inline-flex items-center gap-2 rounded-lg bg-[var(--surface)] px-4 py-2.5 text-sm font-semibold"
-        >
-          Get in touch
-          <SendIcon size={10} className="h-4 w-4" />
-        </a>
+      </div>
+      <div className="mt-6 overflow-hidden">
+        <p className="mb-3 text-sm text-muted-foreground">
+          Here are my socials
+        </p>
+
+        <div className="flex flex-wrap gap-2">
+          <a
+            href="mailto:sinharishit04@gmail.com"
+            className="inline-flex items-center gap-2 rounded-md border px-3 py-2 text-sm transition-colors hover:bg-muted"
+          >
+            <GmailIcon size={15} />
+            Gmail
+          </a>
+
+          <a
+            href="https://github.com/Rishit-Sinha10"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="inline-flex items-center gap-2 rounded-md border px-3 py-2 text-sm transition-colors hover:bg-muted"
+          >
+            <GithubIcon size={15} />
+            GitHub
+          </a>
+
+          <a
+            href="https://x.com/RishitSinh41144"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="inline-flex items-center gap-2 rounded-md border px-3 py-2 text-sm transition-colors hover:bg-muted"
+          >
+            <TwitterXIcon size={15} />
+            Twitter
+          </a>
+          <a
+            href="https://discordapp.com/users/897097621049589790"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="inline-flex items-center gap-2 rounded-md border px-3 py-2 text-sm transition-colors hover:bg-muted"
+          >
+            <DiscordIcon size={15} />
+            Discord
+          </a>
+          <a
+            href="https://www.linkedin.com/in/rishit-sinha-6953ab363/"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="inline-flex items-center gap-2 rounded-md border px-3 py-2 text-sm transition-colors hover:bg-muted"
+          >
+            <LinkedinIcon size={15} />
+            Linkedin
+          </a>
+        </div>
       </div>
 
       <div className="mt-6 overflow-hidden">
@@ -185,6 +251,32 @@ export default function Portfolio() {
             );
           })}
         </div>
+      </div>
+
+      <div className="mt-8">
+        <p className="mb-3 text-left text-[0.68rem] font-bold uppercase tracking-[0.28em] text-[var(--muted)] sm:text-[0.72rem]">
+          Selected work
+        </p>
+        <div className="flex flex-col gap-0 overflow-hidden rounded-lg border border-[var(--border)]">
+          {PROJECTS.slice(0, 3).map((project) => (
+            <div
+              key={project.id}
+              className="border-b border-[var(--border)] last:border-b-0"
+            >
+              <ProjectOverviewCard project={project} />
+            </div>
+          ))}
+        </div>
+      </div>
+
+      <div className="mt-8 flex justify-center">
+        <a
+          href="/projects"
+          className="inline-flex items-center gap-2 rounded-lg border border-[var(--border)] bg-[var(--surface)] px-5 py-2.5 text-sm font-medium text-[var(--foreground)] transition hover:bg-[var(--accent-light)]"
+        >
+          View more projects
+          <ArrowUpRight size={14} />
+        </a>
       </div>
     </section>
   );

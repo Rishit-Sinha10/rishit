@@ -151,88 +151,6 @@ export const PROJECTS: ProjectCaseStudy[] = [
     ],
   },
   {
-    id: "notemog",
-    title: "NoteMog",
-    tagline:
-      "An AI-powered study planner that organizes routines, notes, and goals without friction.",
-    status: "Abandoned",
-    summary: [
-      "NoteMog is a MERN-stack study planning platform aimed at helping students organize notes, build study schedules, and track learning progress in one place, with AI-driven study plan generation as its core differentiator. The frontend — dashboard, planner, note management, and calendar UI — is fully built; the backend API and AI integration are actively being developed on top of a complete database schema.This project is a good one to talk about in-progress and honestly: it shows you can plan and build a full data model and frontend experience before backend logic catches up, which is a realistic way real product teams often build (schema-first, UI-first, then wire up the API).",
-    ],
-    problem: [
-      "No intelligence layer. Existing planners require the student to manually prioritize; there's no system using the student's own notes/goals to suggest what to focus on next.",
-      "No connection between notes and planning. Study plans are made independently of the actual material being studied, so plans go stale or feel arbitrary.",
-    ],
-    solution: [
-      "A smart note system for organizing notes by subject, with AI-generated summaries planned to condense material automatically.",
-      "A drag-and-drop study planner with calendar-based scheduling (FullCalendar), priority tagging, and deadline tracking.",
-      "An AI study plan generator (in progress) intended to turn a student's goals and notes into an actual day-by-day schedule, rather than leaving prioritization entirely manual",
-      "A progress and analytics dashboard (Chart.js) surfacing study time, task completion, and per-subject progress.",
-      "Clerk-based authentication with JWT session handling and bcrypt password hashing for account security.",
-    ],
-    features: [
-      {
-        label: "Note Management",
-        detail: [
-          "Create/organize/categorize notes by subject with rich text editing",
-          "Search and filtering",
-        ],
-      },
-      {
-        label: "Study Planner",
-        detail: [
-          "Drag-and-drop task management, calendar-based scheduling (FullCalendar)",
-          "Priority-based organization and deadline tracking",
-        ],
-      },
-      {
-        label: "Progress And Analytics",
-        detail: [
-          "Real-time performance metrics and Chart.js visualizations",
-          "Task completion and study-time tracking",
-        ],
-      },
-      {
-        label: "Subject Management",
-        detail:
-          "Organize by subject/course, allocate study time, subject-level recommendations",
-      },
-    ],
-    architecture: {
-      flow: [
-        "Users access NoteMog through a React + Vite frontend, where they can manage notes, study plans, tasks, subjects, and AI-generated summaries from a unified dashboard.",
-        "Authentication is handled by Clerk, providing secure sign-in, session management, and protected routes before any API requests reach the backend.",
-        "Authenticated requests are sent to the Express.js REST API, where Clerk and JWT middleware validate the user's identity and authorize access.",
-        "The backend routes requests through dedicated controllers for each domain entity—Users, Notes, Plans, Tasks, Subjects, and Summaries—keeping the application modular and maintainable.",
-        "Business logic is executed inside the controllers, while Mongoose models handle communication with MongoDB for persistent data storage.",
-        "MongoDB stores all application data, including user profiles, notes, study plans, tasks, subjects, and AI-generated summaries.",
-        "After processing, the backend returns structured JSON responses to the frontend, allowing React to update the interface in real time without full page reloads.",
-        "This domain-driven architecture separates authentication, business logic, and data persistence, making NoteMog scalable, easy to extend, and maintainable as new features are added.",
-      ],
-    },
-    results: [
-      "Achieved a Lighthouse Performance score of 96/100",
-      "Scored 97/100 for Accessibility and 91/100 for SEO",
-      "Speed Index (SI): 1.1 s",
-      "First Contentful Paint (LCP): 0.9 s",
-    ],
-    liveUrl: "https://lumina-nine-tan.vercel.app/",
-    githubUrl: "https://github.com/Rishit-Sinha10/NoteMog",
-    accent: "#6b7280",
-    skills: [
-      { name: "React", slug: "react", category: "frontend" },
-      { name: "Chart.Js", slug: "Chart.Js", category: "frontend" },
-      { name: "Tailwindcss", slug: "Tailwindcss", category: "frontend" },
-      { name: "Mongoose", slug: "mongoosedotws", category: "backend" },
-      { name: "Eslint", slug: "Eslint", category: "devops" },
-      { name: "Node.js", slug: "nodedotjs", category: "backend" },
-      { name: "MongoDB", slug: "mongodb", category: "database" },
-      { name: "Tailwind CSS", slug: "tailwindcss", category: "frontend" },
-      { name: "Vercel", slug: "vercel", category: "devops" },
-      { name: "Render", slug: "render", category: "devops" },
-    ],
-  },
-  {
     id: "Flux",
     title: "Flux",
     tagline:
@@ -658,5 +576,87 @@ export const PROJECTS: ProjectCaseStudy[] = [
     { name: "PostgreSQL", slug: "postgresql", category: "backend" },
     { name: "Razorpay", slug: "razorpay", category: "backend" },
   ],
-}  
+ },
+ {
+    id: "notemog",
+    title: "NoteMog",
+    tagline:
+      "An AI-powered study planner that organizes routines, notes, and goals without friction.",
+    status: "Abandoned",
+    summary: [
+      "NoteMog is a MERN-stack study planning platform aimed at helping students organize notes, build study schedules, and track learning progress in one place, with AI-driven study plan generation as its core differentiator. The frontend — dashboard, planner, note management, and calendar UI — is fully built; the backend API and AI integration are actively being developed on top of a complete database schema.This project is a good one to talk about in-progress and honestly: it shows you can plan and build a full data model and frontend experience before backend logic catches up, which is a realistic way real product teams often build (schema-first, UI-first, then wire up the API).",
+    ],
+    problem: [
+      "No intelligence layer. Existing planners require the student to manually prioritize; there's no system using the student's own notes/goals to suggest what to focus on next.",
+      "No connection between notes and planning. Study plans are made independently of the actual material being studied, so plans go stale or feel arbitrary.",
+    ],
+    solution: [
+      "A smart note system for organizing notes by subject, with AI-generated summaries planned to condense material automatically.",
+      "A drag-and-drop study planner with calendar-based scheduling (FullCalendar), priority tagging, and deadline tracking.",
+      "An AI study plan generator (in progress) intended to turn a student's goals and notes into an actual day-by-day schedule, rather than leaving prioritization entirely manual",
+      "A progress and analytics dashboard (Chart.js) surfacing study time, task completion, and per-subject progress.",
+      "Clerk-based authentication with JWT session handling and bcrypt password hashing for account security.",
+    ],
+    features: [
+      {
+        label: "Note Management",
+        detail: [
+          "Create/organize/categorize notes by subject with rich text editing",
+          "Search and filtering",
+        ],
+      },
+      {
+        label: "Study Planner",
+        detail: [
+          "Drag-and-drop task management, calendar-based scheduling (FullCalendar)",
+          "Priority-based organization and deadline tracking",
+        ],
+      },
+      {
+        label: "Progress And Analytics",
+        detail: [
+          "Real-time performance metrics and Chart.js visualizations",
+          "Task completion and study-time tracking",
+        ],
+      },
+      {
+        label: "Subject Management",
+        detail:
+          "Organize by subject/course, allocate study time, subject-level recommendations",
+      },
+    ],
+    architecture: {
+      flow: [
+        "Users access NoteMog through a React + Vite frontend, where they can manage notes, study plans, tasks, subjects, and AI-generated summaries from a unified dashboard.",
+        "Authentication is handled by Clerk, providing secure sign-in, session management, and protected routes before any API requests reach the backend.",
+        "Authenticated requests are sent to the Express.js REST API, where Clerk and JWT middleware validate the user's identity and authorize access.",
+        "The backend routes requests through dedicated controllers for each domain entity—Users, Notes, Plans, Tasks, Subjects, and Summaries—keeping the application modular and maintainable.",
+        "Business logic is executed inside the controllers, while Mongoose models handle communication with MongoDB for persistent data storage.",
+        "MongoDB stores all application data, including user profiles, notes, study plans, tasks, subjects, and AI-generated summaries.",
+        "After processing, the backend returns structured JSON responses to the frontend, allowing React to update the interface in real time without full page reloads.",
+        "This domain-driven architecture separates authentication, business logic, and data persistence, making NoteMog scalable, easy to extend, and maintainable as new features are added.",
+      ],
+    },
+    results: [
+      "Achieved a Lighthouse Performance score of 96/100",
+      "Scored 97/100 for Accessibility and 91/100 for SEO",
+      "Speed Index (SI): 1.1 s",
+      "First Contentful Paint (LCP): 0.9 s",
+    ],
+    liveUrl: "https://lumina-nine-tan.vercel.app/",
+    githubUrl: "https://github.com/Rishit-Sinha10/NoteMog",
+    accent: "#6b7280",
+    skills: [
+      { name: "React", slug: "react", category: "frontend" },
+      { name: "Chart.Js", slug: "Chart.Js", category: "frontend" },
+      { name: "Tailwindcss", slug: "Tailwindcss", category: "frontend" },
+      { name: "Mongoose", slug: "mongoosedotws", category: "backend" },
+      { name: "Eslint", slug: "Eslint", category: "devops" },
+      { name: "Node.js", slug: "nodedotjs", category: "backend" },
+      { name: "MongoDB", slug: "mongodb", category: "database" },
+      { name: "Tailwind CSS", slug: "tailwindcss", category: "frontend" },
+      { name: "Vercel", slug: "vercel", category: "devops" },
+      { name: "Render", slug: "render", category: "devops" },
+    ],
+  },  
 ];
