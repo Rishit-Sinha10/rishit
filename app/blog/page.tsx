@@ -9,7 +9,6 @@ export const metadata = {
 
 export default function BlogPage() {
   const posts = getAllBlogPosts();
-
   return (
     <section className="mx-auto w-full max-w-[768px] px-5 py-12">
       <div className="mb-12">

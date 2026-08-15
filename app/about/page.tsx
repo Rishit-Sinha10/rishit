@@ -3,6 +3,7 @@ import { Reveal } from "../pages/reavel";
 import Link from "next/link";
 import { LinkPreview } from "../components/link_preview";
 import { ProfileImage } from "../components/Profile-Image";
+import { Signature } from "../components/Signature";
 import Img from "../../public/Images/proof.avif";
 export default function About() {
   return (
@@ -172,6 +173,13 @@ export default function About() {
           </div>
         </Reveal>
       </div>
+
+      {/* Personal sign-off */}
+      <Reveal delay={0.05}>
+        <div className="mt-8 flex justify-center">
+          <Signature />
+        </div>
+      </Reveal>
     </section>
   );
 }

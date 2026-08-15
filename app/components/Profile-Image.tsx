@@ -1,24 +1,16 @@
 "use client";
 
-import Image from "next/image";
+import Image,{ type StaticImageData } from "next/image";
 import { useState } from "react";
 import { cn } from "../../lib/utils";
 interface ProfileImageProps {
-  src: string;
+  src: string | StaticImageData;
   alt: string;
   sizes: string;
   priority?: boolean;
   className?: string;
   imgClassName?: string;
 }
-
-/**
- * next/image wrapper for profile photos. Images are fetched directly by the
- * browser (unoptimized) — the CDN rejects server-side optimizer requests with
- * 401, so we skip the optimizer to keep images loading. Lazily loads remote
- * images, fades them in once decoded, and swaps in a placeholder illustration
- * if a URL 404s or fails.
- */
 export function ProfileImage({
   src,
   alt,
@@ -29,7 +21,6 @@ export function ProfileImage({
 }: ProfileImageProps) {
   const [failed, setFailed] = useState(false);
   const [loaded, setLoaded] = useState(false);
-
   return (
     <div
       className={cn("relative isolate overflow-hidden bg-mist", className)}

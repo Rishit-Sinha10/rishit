@@ -17,17 +17,16 @@ import {
   siMysql,
   siCss,
   siGit,
-  siGithub
+  siGithub,
 } from "simple-icons";
 import { type SkillCategory } from "../../data/projects";
 import type { SimpleIcon } from "simple-icons";
 import dynamic from "next/dynamic";
 import FileDescriptionIcon from "../components/file";
 import { LinkPreview } from "../components/link_preview";
-import SendIcon  from "../components/send-icon";
-import {motion} from "framer-motion"
-import { useScramble } from "../hooks/useScramble";
-import { useState} from "react";
+import SendIcon from "../components/send-icon";
+import { Signature } from "../components/Signature";
+import { motion } from "framer-motion";
 
 const ContributionGraph = dynamic(() => import("../pages/github"), {
   ssr: false,
@@ -37,7 +36,11 @@ const ContributionGraph = dynamic(() => import("../pages/github"), {
 });
 type HomeSkillCategory = "frontend" | "backend" | "database" | "devops";
 
-const SKILLS: { name: string; icon: SimpleIcon; category: HomeSkillCategory }[] = [
+const SKILLS: {
+  name: string;
+  icon: SimpleIcon;
+  category: HomeSkillCategory;
+}[] = [
   { name: "React", icon: siReact, category: "frontend" },
   { name: "Next.js", icon: siNextdotjs, category: "frontend" },
   { name: "TypeScript", icon: siTypescript, category: "frontend" },
@@ -65,7 +68,12 @@ const CATEGORY_LABELS: Record<HomeSkillCategory, string> = {
   devops: "DevOps & Tooling",
 };
 
-const CATEGORY_ORDER: HomeSkillCategory[] = ["frontend", "backend", "database", "devops"];
+const CATEGORY_ORDER: HomeSkillCategory[] = [
+  "frontend",
+  "backend",
+  "database",
+  "devops",
+];
 function SkillIcon({ icon }: { icon: SimpleIcon }) {
   return (
     <svg
@@ -90,48 +98,46 @@ function SkillBadge({ name, icon }: { name: string; icon: SimpleIcon }) {
 }
 
 export default function Portfolio() {
-  const [wordIdx, setWordIdx] = useState(0);
-  const [hovered, setHovered] = useState(false);
-  const scrambled = useScramble(
-    "I'm Rishit Sinha, a full-stack Developer who ships production systems.",
-    hovered,
-  );
   return (
     <section className="mx-auto flex w-full max-w-4xl flex-col px-4 py-6 sm:px-6 md:px-8 lg:px-10">
-      <motion.h1
+      <motion.div
         initial={{ opacity: 0, y: 36 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.8, delay: 0.1 }}
-        onMouseEnter={() => setHovered(true)}
-        onMouseLeave={() => setHovered(false)}
-        className="text-left font-bold tracking-tight text-[var(--foreground)] text-lg sm:text-xl md:text-2xl lg:text-3xl"
+        className="flex flex-col items-start gap-4"
       >
-        {scrambled.split(" ").map((word: any, wi: any, arr: any) => (
-          <span key={wi}>
-            {word}{wi < arr.length - 1 && " "}
-          </span>
-        ))}
-      </motion.h1>
-
-      <p className="mt-3 max-w-2xl text-left text-sm leading-6 text-[var(--muted)] sm:text-base sm:leading-7">
-        Final-year CS student. Built real-time streaming with WebSockets,
-        shipped fintech and EdTech products at startups, and currently
-        exploring distributed systems and developer tooling.
+        <Signature className="mx-0" />
+      </motion.div>
+      <p className="mt-4 text-left text-sm leading-6 text-[var(--muted)] sm:text-base sm:leading-7">
+        I’m Rishit Sinha, a Final Year Computer Science student
+        building products that turn ideas into working software — from polished
+        frontend experiences to full-stack applications and AI-powered tools.
+        I’ve worked across frontend and full-stack development through
+        internships and independent projects, and I’m currently going deeper
+        into backend engineering, system design, and AI while building products
+        of my own. I care about the details users notice, the architecture
+        developers maintain, and most importantly, shipping something that
+        actually works.
       </p>
-
       <div className="mt-4 text-left text-sm leading-6 text-[var(--muted)] sm:text-base sm:leading-7">
-        Previously frontend developer at{" "}
+        I’ve worked across frontend and full-stack development through
+        internships and independent products, including building Shopify
+        experiences at{" "}
         <LinkPreview url="https://thetastymillets.com/">
-          <span className="font-medium text-[var(--foreground)]">TheTastyMillets</span>
+          <span className="font-medium text-[var(--foreground)]">
+            TheTastyMillets
+          </span>
         </LinkPreview>{" "}
-        (built responsive components across 12+ pages with WCAG 2.1 AA
-        compliance) and full-stack intern at{" "}
+        and working on web products at{" "}
         <LinkPreview url="https://www.nextlearn.in/">
-          <span className="font-medium text-[var(--foreground)]">NextLearn Technologies</span>
-        </LinkPreview>{" "}
-        (cut page load by 65%, shipped 8 features on schedule).
+          <span className="font-medium text-[var(--foreground)]">
+            NextLearn Technologies
+          </span>
+        </LinkPreview>
+        . Along the way, I’ve built projects like ZecoAI, a browser-based coding
+        environment, and Flux, a real-time streaming platform — while continuing
+        to go deeper into backend engineering, system design, and AI.
       </div>
-
       <div className="mt-4 flex flex-wrap items-center gap-2.5 sm:gap-3">
         <a
           href="/Rishit_Resume.pdf"
@@ -168,7 +174,11 @@ export default function Portfolio() {
                 </p>
                 <div className="flex flex-wrap gap-1.5 sm:gap-2">
                   {skillsInCat.map((skill) => (
-                    <SkillBadge key={skill.name} name={skill.name} icon={skill.icon} />
+                    <SkillBadge
+                      key={skill.name}
+                      name={skill.name}
+                      icon={skill.icon}
+                    />
                   ))}
                 </div>
               </div>
