@@ -11,11 +11,11 @@ export type ProjectCaseStudy = {
   id: string;
   title: string;
   tagline: string;
-  status: "Live" | "In dev";
+  status: "Live" | "In dev" | "Abandoned";
   summary: string[];
   problem: string | string[];
-  solution: string|string[];
-  features: Array<{ label: string; detail: string|string[]}>;
+  solution: string | string[];
+  features: Array<{ label: string; detail: string | string[] }>;
   architecture: {
     flow: string[];
   };
@@ -130,9 +130,9 @@ export const PROJECTS: ProjectCaseStudy[] = [
     },
     results: [
       "Achieved a Lighthouse Performance score of 90/100",
-     "Scored 96/100 for Accessibility and 100/100 for SEO",
-     "First Contentful Paint (FCP): 0.9 s",
-     "Largest Contentful Paint (LCP): 1.6 s",
+      "Scored 96/100 for Accessibility and 100/100 for SEO",
+      "First Contentful Paint (FCP): 0.9 s",
+      "Largest Contentful Paint (LCP): 1.6 s",
     ],
     liveUrl: "https://finan-cino.vercel.app/",
     githubUrl: "https://github.com/Rishit-Sinha10/Financcino",
@@ -155,7 +155,7 @@ export const PROJECTS: ProjectCaseStudy[] = [
     title: "NoteMog",
     tagline:
       "An AI-powered study planner that organizes routines, notes, and goals without friction.",
-    status: "Live",
+    status: "Abandoned",
     summary: [
       "NoteMog is a MERN-stack study planning platform aimed at helping students organize notes, build study schedules, and track learning progress in one place, with AI-driven study plan generation as its core differentiator. The frontend — dashboard, planner, note management, and calendar UI — is fully built; the backend API and AI integration are actively being developed on top of a complete database schema.This project is a good one to talk about in-progress and honestly: it shows you can plan and build a full data model and frontend experience before backend logic catches up, which is a realistic way real product teams often build (schema-first, UI-first, then wire up the API).",
     ],
@@ -212,9 +212,9 @@ export const PROJECTS: ProjectCaseStudy[] = [
     },
     results: [
       "Achieved a Lighthouse Performance score of 96/100",
-     "Scored 97/100 for Accessibility and 91/100 for SEO",
-     "Speed Index (SI): 1.1 s",
-     "First Contentful Paint (LCP): 0.9 s",
+      "Scored 97/100 for Accessibility and 91/100 for SEO",
+      "Speed Index (SI): 1.1 s",
+      "First Contentful Paint (LCP): 0.9 s",
     ],
     liveUrl: "https://lumina-nine-tan.vercel.app/",
     githubUrl: "https://github.com/Rishit-Sinha10/NoteMog",
@@ -343,13 +343,13 @@ export const PROJECTS: ProjectCaseStudy[] = [
     ],
   },
   {
-    id: "zecoai",
-    title: "ZecoAI",
+    id: "klryo",
+    title: "klryo",
     tagline:
       "A collaborative coding environment with built-in AI assistance and sandboxed execution.",
     status: "Live",
     summary: [
-      "ZecoAI is a full-stack, browser-based code editor that combines the editing experience of VS Code with AI-assisted code review, instant multi-language code execution, and persistent AI chat history — all backed by a cloud database.It was built to explore how developers could get real-time feedback and run code without leaving the browser, while keeping their project history and conversations saved across sessions.The project spans a complete product surface: authentication, project/file management, a Monaco-based editor, a code execution pipeline, and an AI chat system — making it a strong demonstration of end-to-end full-stack ownership rather than a single isolated feature",
+      "klryo is a full-stack, browser-based code editor that combines the editing experience of VS Code with AI-assisted code review, instant multi-language code execution, and persistent AI chat history — all backed by a cloud database.It was built to explore how developers could get real-time feedback and run code without leaving the browser, while keeping their project history and conversations saved across sessions.The project spans a complete product surface: authentication, project/file management, a Monaco-based editor, a code execution pipeline, and an AI chat system — making it a strong demonstration of end-to-end full-stack ownership rather than a single isolated feature",
     ],
     problem: [
       "A Monaco-powered editor (the same engine behind VS Code) for a familiar, professional editing experience.",
@@ -382,24 +382,24 @@ export const PROJECTS: ProjectCaseStudy[] = [
     ],
     architecture: {
       flow: [
-        "ZecoAI follows a modern decoupled architecture where the React frontend communicates with an Express.js backend through REST APIs.",
+        "klryo follows a modern decoupled architecture where the React frontend communicates with an Express.js backend through REST APIs.",
         "The frontend is built using React, Vite, TypeScript, Tailwind CSS, and Monaco Editor, providing a fast and responsive coding environment.",
         "Authentication and user management are handled by Clerk, allowing secure sign-in, protected routes, and session management.",
         "The Express.js backend manages business logic, project operations, file management, AI requests, and integrations with external services.",
         "MongoDB Atlas stores user projects, files, chat history, and application metadata using Mongoose ODM.",
         "Judge0 API executes user code inside isolated environments and returns compilation and runtime results securely.",
         "Groq AI powers intelligent code reviews, debugging assistance, explanations, and interactive AI conversations.",
-        "This architecture keeps the frontend lightweight while delegating authentication, execution, storage, and AI capabilities to specialized services, making ZecoAI scalable and maintainable.",
+        "This architecture keeps the frontend lightweight while delegating authentication, execution, storage, and AI capabilities to specialized services, making klryo scalable and maintainable.",
       ],
     },
     results: [
       "41 unique users explored the platform",
       "290 total page views across the application",
       "7.1 pages viewed per visitor, indicating deep feature exploration",
-      "46% bounce rate"
+      "46% bounce rate",
     ],
-    liveUrl: "https://zecoai.vercel.app/",
-    githubUrl: "https://github.com/Rishit-Sinha10/ZecoAI",
+    liveUrl: "https://klryo.vercel.app/",
+    githubUrl: "https://github.com/Rishit-Sinha10/klryo",
     accent: "#9ca3af",
     skills: [
       { name: "React", slug: "react", category: "frontend" },
@@ -424,149 +424,239 @@ export const PROJECTS: ProjectCaseStudy[] = [
     ],
   },
   {
-  id: "TuxHuzz",
-  title: "TuxHuzz",
-  tagline:
-    "A Clash Royale companion app that tracks player stats, analyzes decks, and roasts your gameplay with AI.",
-  status: "Live",
-  summary: [
-    "TuxHuzz is a full-stack Clash Royale stats tracker and deck analyzer built on top of the official Clash Royale API. Users can look up any player by tag to see live trophy counts, level, win/loss history, and battle stats, or pull up clan info and compare members. Beyond raw stats, the app runs an 8-card deck through a rule-based analysis engine that scores elixir curve, win conditions, and air/splash coverage, then surfaces strengths, weaknesses, and concrete suggestions. A lighter, more playful feature — AI 'roasts' — uses Groq to generate personalized (and increasingly savage) commentary on a player's performance based on their real stats.",
-  ],
-  problem: [
-    "A Flask/Python backend that talks directly to the official Clash Royale API for players, clans, and card data.",
-    "A rule-based DeckAnalyzer service that scores an 8-card deck against configurable thresholds (elixir cost, air defense, splash damage, win-condition count) and generates human-readable suggestions.",
-    "A Groq-powered 'roast' endpoint with selectable intensity (fun / savage / nuclear) that turns a player's win rate, trophy history, and three-crown rate into personalized AI commentary.",
-    "JWT-based authentication (Flask-JWT-Extended) plus a SQL database (via SQLAlchemy, supporting MySQL/Postgres) to persist users and card data.",
-  ],
-  solution:
-    "In-game Clash Royale stats screens are limited — players can't easily see deep trends in their own stats, get objective feedback on their deck composition, or share a fun, personalized summary of their play. Serious players and casual clashers alike often bounce between third-party stat sites, spreadsheets, and Discord chats to figure out what's actually wrong with a deck, with no single tool tying stats, analysis, and personality together. TuxHuzz unifies player/clan lookup, rule-based deck analysis, and AI-generated commentary into one dashboard, so anyone can paste in a player tag and immediately get both hard numbers and an easy-to-digest verdict.",
-  features: [
-    {
-      label: "Player & clan lookup",
-      detail:
-        "Search any player tag to view live trophies, level, win/loss record, and clan membership pulled straight from the Clash Royale API.",
-    },
-    {
-      label: "Rule-based deck analyzer",
-      detail:
-        "Scores an 8-card deck on elixir curve, win conditions, and air/splash coverage, returning strengths, weaknesses, and an overall rating.",
-    },
-    {
-      label: "AI-powered roasts",
-      detail:
-        "Groq-generated, stat-driven roasts of a player's performance with selectable intensity: fun, savage, or nuclear.",
-    },
-    {
-      label: "Stats dashboard & charts",
-      detail:
-        "React + Chart.js dashboard visualizing win rate, trophy trends, and deck metrics at a glance.",
-    },
-  ],
-  architecture: {
-    flow: [
-      "TuxHuzz follows a decoupled architecture with a React (Vite) frontend calling a Flask REST API backend.",
-      "The frontend is built with React, React Router, and Chart.js/react-chartjs-2 for the stats dashboard and deck charts.",
-      "The Flask backend is organized around blueprints — auth, players, cards, and roast — each handling a distinct slice of functionality.",
-      "Flask-JWT-Extended handles authentication and protects routes, while SQLAlchemy (MySQL/Postgres-compatible) persists users and seeded card data.",
-      "A ClashRoyaleAPI service wraps calls to the official Clash Royale API for player, clan, and card data.",
-      "A DeckAnalyzer service applies configurable thresholds to score deck composition and generate suggestions.",
-      "A roast service calls the Groq API to turn a player's real stats into personalized AI commentary, with a graceful fallback message if Groq is unavailable.",
-      "This separation keeps game-data fetching, analysis logic, and AI generation independently testable while the frontend stays a thin presentation layer.",
+    id: "TuxHuzz",
+    title: "TuxHuzz",
+    tagline:
+      "A Clash Royale companion app that tracks player stats, analyzes decks, and roasts your gameplay with AI.",
+    status: "Live",
+    summary: [
+      "TuxHuzz is a full-stack Clash Royale stats tracker and deck analyzer built on top of the official Clash Royale API. Users can look up any player by tag to see live trophy counts, level, win/loss history, and battle stats, or pull up clan info and compare members. Beyond raw stats, the app runs an 8-card deck through a rule-based analysis engine that scores elixir curve, win conditions, and air/splash coverage, then surfaces strengths, weaknesses, and concrete suggestions. A lighter, more playful feature — AI 'roasts' — uses Groq to generate personalized (and increasingly savage) commentary on a player's performance based on their real stats.",
     ],
-  },
-  results: [
-        "29 git clones in the last 14 days",
-        "20 unique cloners",
-        "6 total repo page views in the last 14 days",
-        "1 unique visitor",
-  ],
-  liveUrl: "https://deploysus.vercel.app/",
-  githubUrl: "https://github.com/Rishit-Sinha10/clash_royale",
-  accent: "#9ca3af",
-  skills: [
-    { name: "React", slug: "react", category: "frontend" },
-    { name: "Vite", slug: "vite", category: "frontend" },
-    { name: "Chart.js", slug: "chartdotjs", category: "frontend" },
-    { name: "React Router", slug: "reactrouter", category: "frontend" },
-    { name: "Vercel", slug: "vercel", category: "devops" },
-    { name: "Python", slug: "python", category: "backend" },
-    { name: "Flask", slug: "flask", category: "backend" },
-    { name: "Render", slug: "Render", category: "devops" },
-    { name: "MySQL", slug: "mysql", category: "database" },
-    { name: "SQLAlchemy", slug: "sqlalchemy", category: "backend" },
-   ],
+    problem: [
+      "A Flask/Python backend that talks directly to the official Clash Royale API for players, clans, and card data.",
+      "A rule-based DeckAnalyzer service that scores an 8-card deck against configurable thresholds (elixir cost, air defense, splash damage, win-condition count) and generates human-readable suggestions.",
+      "A Groq-powered 'roast' endpoint with selectable intensity (fun / savage / nuclear) that turns a player's win rate, trophy history, and three-crown rate into personalized AI commentary.",
+      "JWT-based authentication (Flask-JWT-Extended) plus a SQL database (via SQLAlchemy, supporting MySQL/Postgres) to persist users and card data.",
+    ],
+    solution:
+      "In-game Clash Royale stats screens are limited — players can't easily see deep trends in their own stats, get objective feedback on their deck composition, or share a fun, personalized summary of their play. Serious players and casual clashers alike often bounce between third-party stat sites, spreadsheets, and Discord chats to figure out what's actually wrong with a deck, with no single tool tying stats, analysis, and personality together. TuxHuzz unifies player/clan lookup, rule-based deck analysis, and AI-generated commentary into one dashboard, so anyone can paste in a player tag and immediately get both hard numbers and an easy-to-digest verdict.",
+    features: [
+      {
+        label: "Player & clan lookup",
+        detail:
+          "Search any player tag to view live trophies, level, win/loss record, and clan membership pulled straight from the Clash Royale API.",
+      },
+      {
+        label: "Rule-based deck analyzer",
+        detail:
+          "Scores an 8-card deck on elixir curve, win conditions, and air/splash coverage, returning strengths, weaknesses, and an overall rating.",
+      },
+      {
+        label: "AI-powered roasts",
+        detail:
+          "Groq-generated, stat-driven roasts of a player's performance with selectable intensity: fun, savage, or nuclear.",
+      },
+      {
+        label: "Stats dashboard & charts",
+        detail:
+          "React + Chart.js dashboard visualizing win rate, trophy trends, and deck metrics at a glance.",
+      },
+    ],
+    architecture: {
+      flow: [
+        "TuxHuzz follows a decoupled architecture with a React (Vite) frontend calling a Flask REST API backend.",
+        "The frontend is built with React, React Router, and Chart.js/react-chartjs-2 for the stats dashboard and deck charts.",
+        "The Flask backend is organized around blueprints — auth, players, cards, and roast — each handling a distinct slice of functionality.",
+        "Flask-JWT-Extended handles authentication and protects routes, while SQLAlchemy (MySQL/Postgres-compatible) persists users and seeded card data.",
+        "A ClashRoyaleAPI service wraps calls to the official Clash Royale API for player, clan, and card data.",
+        "A DeckAnalyzer service applies configurable thresholds to score deck composition and generate suggestions.",
+        "A roast service calls the Groq API to turn a player's real stats into personalized AI commentary, with a graceful fallback message if Groq is unavailable.",
+        "This separation keeps game-data fetching, analysis logic, and AI generation independently testable while the frontend stays a thin presentation layer.",
+      ],
+    },
+    results: [
+      "29 git clones in the last 14 days",
+      "20 unique cloners",
+      "6 total repo page views in the last 14 days",
+      "1 unique visitor",
+    ],
+    liveUrl: "https://deploysus.vercel.app/",
+    githubUrl: "https://github.com/Rishit-Sinha10/clash_royale",
+    accent: "#9ca3af",
+    skills: [
+      { name: "React", slug: "react", category: "frontend" },
+      { name: "Vite", slug: "vite", category: "frontend" },
+      { name: "Chart.js", slug: "chartdotjs", category: "frontend" },
+      { name: "React Router", slug: "reactrouter", category: "frontend" },
+      { name: "Vercel", slug: "vercel", category: "devops" },
+      { name: "Python", slug: "python", category: "backend" },
+      { name: "Flask", slug: "flask", category: "backend" },
+      { name: "Render", slug: "Render", category: "devops" },
+      { name: "MySQL", slug: "mysql", category: "database" },
+      { name: "SQLAlchemy", slug: "sqlalchemy", category: "backend" },
+    ],
   },
   {
-  id: "VRTX",
-  title: "VRTX",
+    id: "xiflow",
+    title: "xiflow",
+    tagline:
+      "A premium football tactical workspace for building, saving, and sharing formation lineups on an interactive pitch.",
+    status: "Live",
+    summary: [
+      "xiflow is an early-stage, full-stack football platform with a polished Next.js frontend and an Express backend split into separate workspaces. The current build ships a responsive football pitch with a formation-based lineup builder (7 formations, drag-and-drop player placement), with Firebase auth at the core and a protected API boundary between the client and the Express API. The long-term vision is a differentiated product that combines modern sports UX with coaching-level tactical depth.",
+    ],
+    problem: [
+      "Football fans, coaches, and analysts lack a fast, polished way to build and tweak tactical lineups and share them with others.",
+      "Existing tactical editors feel clunky, dated, or bloated, with no premium, SaaS-grade experience designed around quick formation switching and visual player placement.",
+      "A Next.js 16 App Router frontend (React 19, Tailwind CSS v4) driving an interactive, drag-and-drop pitch UI.",
+      "An Express 5 (ESM) backend, kept in a separate workspace, exposing a protected API boundary gated by Firebase-verified auth.",
+    ],
+    solution:
+      "A full-stack web app that puts an interactive football pitch at the center: users pick a formation, place players visually, and (on the roadmap) save, share, and revisit lineups. The architecture is built to scale cleanly from a lineup editor into a full tactical workspace with teams, player search, shareable links, and future real-time collaboration and AI insights.",
+    features: [
+      {
+        label: "Interactive pitch",
+        detail:
+          "A responsive, visual football pitch that serves as the core surface for building and editing lineups.",
+      },
+      {
+        label: "Formation selector",
+        detail:
+          "7 formation presets — 4-3-3, 4-3-3 Attack, 4-3-3 Holding, 4-4-2, 4-5-1, 4-2-1-3, and 4-2-3-1.",
+      },
+      {
+        label: "Drag-and-drop lineup building",
+        detail:
+          "Players can be placed and repositioned directly on the pitch to build out a tactical setup.",
+      },
+      {
+        label: "Firebase-gated API",
+        detail:
+          "Firebase Authentication on the client backs a protected API boundary, so only verified users can reach gated Express routes.",
+      },
+      {
+        label: "Roadmap",
+        detail:
+          "Saved lineups, custom teams, player search, shareable lineup URLs, real-time collaboration, and AI-driven tactical analysis.",
+      },
+    ],
+    architecture: {
+      flow: [
+        "xiflow is a monorepo with two workspaces: /frontend (Next.js 16 App Router, React 19, Tailwind CSS v4) and /backend (Express 5, ESM).",
+        "Firebase handles authentication on the client, issuing credentials that gate access to the Express API.",
+        "A protected API boundary sits between the Next.js frontend and the Express backend so only authenticated requests reach sensitive routes.",
+        "The frontend is organized around a product-oriented structure — app, components, features, lib, services, and types — supporting the interactive pitch and formation logic.",
+        "Bun is used as the package manager and lockfile across both workspaces.",
+        "The planned data layer is Supabase + Prisma + PostgreSQL, with Vercel targeted for the frontend and Render for the API once deployed.",
+      ],
+    },
+    results: [
+      "5 commits",
+      "1 star",
+      "0 forks",
+      "0 open issues or pull requests",
+      "No live deployment yet — pre-release / portfolio-stage build",
+    ],
+    liveUrl: "https://xiflow.vercel.app/",
+    githubUrl: "https://github.com/Rishit-Sinha10/xiflow",
+    accent: "#059669",
+    skills: [
+      { name: "Next.js", slug: "nextdotjs", category: "frontend" },
+      { name: "Tailwind CSS", slug: "tailwindcss", category: "frontend" },
+      { name: "Node.js", slug: "nodedotjs", category: "backend" },
+      { name: "Express", slug: "express", category: "backend" },
+      { name: "Firebase", slug: "firebase", category: "backend" },
+      { name: "Bun", slug: "bun", category: "devops" },
+    ],
+  },
+  {
+  id: "PaperFlow",
+  title: "PaperFlow",
   tagline:
-    "A premium football tactical workspace for building, saving, and sharing formation lineups on an interactive pitch.",
-  status:"In dev",
+    "A premium document workspace for scanning, cleaning, extracting, studying, and exporting documents in one place.",
+  status: "In dev",
   summary: [
-    "VRTX is an early-stage, full-stack football platform with a polished Next.js frontend and an Express backend split into separate workspaces. The current build ships a responsive football pitch with a formation-based lineup builder (7 formations, drag-and-drop player placement), with Firebase auth at the core and a protected API boundary between the client and the Express API. The long-term vision is a differentiated product that combines modern sports UX with coaching-level tactical depth.",
+    "PaperFlow is a full-stack document productivity platform designed around a complete document workflow — scan, clean, OCR, edit, study, and export. Built with Next.js and TypeScript, the platform combines browser-side document processing with Supabase authentication and PostgreSQL, Tesseract.js OCR, PDF/DOCX tooling, OpenAI-powered study notes, and Razorpay subscriptions. The product is designed to evolve from a document utility into a complete productivity workspace for students and professionals."
   ],
   problem: [
-    "Football fans, coaches, and analysts lack a fast, polished way to build and tweak tactical lineups and share them with others.",
-    "Existing tactical editors feel clunky, dated, or bloated, with no premium, SaaS-grade experience designed around quick formation switching and visual player placement.",
-    "A Next.js 16 App Router frontend (React 19, Tailwind CSS v4) driving an interactive, drag-and-drop pitch UI.",
-    "An Express 5 (ESM) backend, kept in a separate workspace, exposing a protected API boundary gated by Firebase-verified auth.",
+    "Students and professionals often rely on multiple disconnected tools for scanning documents, extracting text, editing files, generating notes, and exporting their work.",
+    "Existing PDF and document tools can feel fragmented, expensive, or overly complicated for users who simply want to transform documents into usable study and productivity material.",
+    "There is an opportunity to combine document processing, OCR, AI-assisted study workflows, and export capabilities into a single focused workspace.",
+    "Building the product also requires secure authentication, role-based access, private student verification, subscription management, and safe handling of AI and payment credentials."
   ],
   solution:
-    "A full-stack web app that puts an interactive football pitch at the center: users pick a formation, place players visually, and (on the roadmap) save, share, and revisit lineups. The architecture is built to scale cleanly from a lineup editor into a full tactical workspace with teams, player search, shareable links, and future real-time collaboration and AI insights.",
+    "A unified document workspace that brings scanning, document cleanup, OCR, editing, AI-powered study notes, and export into a single workflow. PaperFlow uses browser-side processing where practical while keeping authentication, database access, billing, and sensitive AI operations behind secure server-side boundaries. The architecture is designed to support free users, verified students, Pro subscribers, and administrators.",
   features: [
     {
-      label: "Interactive pitch",
+      label: "Document workspace",
       detail:
-        "A responsive, visual football pitch that serves as the core surface for building and editing lineups.",
+        "A centralized workflow built around scanning, cleaning, OCR, editing, studying, and exporting documents."
     },
     {
-      label: "Formation selector",
+      label: "OCR processing",
       detail:
-        "7 formation presets — 4-3-3, 4-3-3 Attack, 4-3-3 Holding, 4-4-2, 4-5-1, 4-2-1-3, and 4-2-3-1.",
+        "Tesseract.js enables browser-side OCR so users can extract text from scanned documents and images."
     },
     {
-      label: "Drag-and-drop lineup building",
+      label: "PDF & image tools",
       detail:
-        "Players can be placed and repositioned directly on the pitch to build out a tactical setup.",
+        "Browser-side document processing with pdf-lib provides the foundation for working with PDFs and images."
     },
     {
-      label: "Firebase-gated API",
+      label: "AI study notes",
       detail:
-        "Firebase Authentication on the client backs a protected API boundary, so only verified users can reach gated Express routes.",
+        "OpenAI's Responses API powers the study workflow, turning extracted document content into useful study notes."
     },
     {
-      label: "Roadmap",
+      label: "DOCX generation",
       detail:
-        "Saved lineups, custom teams, player search, shareable lineup URLs, real-time collaboration, and AI-driven tactical analysis.",
+        "The document pipeline supports generating editable DOCX output alongside PDF-based workflows."
     },
+    {
+      label: "Student verification",
+      detail:
+        "Verified students can submit college-ID verification and receive a temporary Pro benefit followed by student-discount eligibility."
+    },
+    {
+      label: "Pro subscriptions",
+      detail:
+        "Razorpay Subscriptions provides the foundation for recurring Pro billing with separate regular and verified-student plans."
+    },
+    {
+      label: "Role-based platform",
+      detail:
+        "Free users, verified students, Pro subscribers, and administrators have different capabilities and platform responsibilities."
+    }
   ],
   architecture: {
     flow: [
-      "VRTX is a monorepo with two workspaces: /frontend (Next.js 16 App Router, React 19, Tailwind CSS v4) and /backend (Express 5, ESM).",
-      "Firebase handles authentication on the client, issuing credentials that gate access to the Express API.",
-      "A protected API boundary sits between the Next.js frontend and the Express backend so only authenticated requests reach sensitive routes.",
-      "The frontend is organized around a product-oriented structure — app, components, features, lib, services, and types — supporting the interactive pitch and formation logic.",
-      "Bun is used as the package manager and lockfile across both workspaces.",
-      "The planned data layer is Supabase + Prisma + PostgreSQL, with Vercel targeted for the frontend and Render for the API once deployed.",
+      "PaperFlow is built as a Next.js + TypeScript application using Tailwind CSS for the product interface.",
+      "Supabase provides authentication, PostgreSQL database functionality, row-level security, and private storage for student verification.",
+      "Browser-side processing handles PDF and image operations with pdf-lib and OCR with Tesseract.js where appropriate.",
+      "DOCX generation is handled through the docx library, providing an editable document export path.",
+      "OpenAI's Responses API powers the AI study-notes workflow, with the API key kept server-side.",
+      "Razorpay Subscriptions provides recurring Pro billing, with webhook handling used to synchronize subscription state.",
+      "The application includes an admin foundation for student verification, Pro grants, and platform analytics.",
+      "Heavy Office/PDF conversion workloads are planned for an isolated worker architecture rather than serverless request execution."
     ],
   },
   results: [
-    "5 commits",
+    "7 commits",
     "1 star",
-    "0 forks",
+    "1 fork",
     "0 open issues or pull requests",
-    "No live deployment yet — pre-release / portfolio-stage build",
+    "Pre-release / portfolio-stage build"
   ],
-  liveUrl: "https://vrtx-gamma.vercel.app",
-  githubUrl: "https://github.com/Rishit-Sinha10/VRTX",
-  accent: "#059669",
+  liveUrl: "",
+  githubUrl: "https://github.com/iamsuyashhhhh/1Tool",
+  accent: "#6366f1",
   skills: [
     { name: "Next.js", slug: "nextdotjs", category: "frontend" },
+    { name: "TypeScript", slug: "typescript", category: "frontend" },
     { name: "Tailwind CSS", slug: "tailwindcss", category: "frontend" },
-    { name: "Node.js", slug: "nodedotjs", category: "backend" },
-    { name: "Express", slug: "express", category: "backend" },
-    { name: "Firebase", slug: "firebase", category: "backend" },
-    { name: "Bun", slug: "bun", category: "devops" },
+    { name: "Supabase", slug: "supabase", category: "backend" },
+    { name: "PostgreSQL", slug: "postgresql", category: "backend" },
+    { name: "Razorpay", slug: "razorpay", category: "backend" },
   ],
-},
+}  
 ];

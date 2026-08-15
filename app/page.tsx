@@ -1,17 +1,10 @@
 "use client";
 import dynamic from "next/dynamic";
-import Portfolio from "@/app/pages/Home";
-const Work = dynamic(() => import("./projects/page"), { ssr: false });
-const ExperienceSection = dynamic(
-  () => import("../app/experience/[[...rest]]/page").then((m) => ({ default: m.Experience })),
-  { ssr: false },
-);
-const Contact = dynamic(() => import("./components/contact"), { ssr: false });
+import Portfolio from "../app/pages/Home";
 export default function App() {
   return (
     <>
       <Portfolio />
-      <Contact />
     </>
   );
 }

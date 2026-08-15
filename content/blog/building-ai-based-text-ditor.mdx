@@ -1,21 +1,21 @@
 ---
-title: "Building ZecoAI: AI-Powered Online Code Editor"
+title: "Building klryo: AI-Powered Online Code Editor"
 date: "2026-07-20"
-excerpt: "How I built ZecoAI, an AI-powered online code editor with Monaco Editor, Judge0, real-time execution, and a modern developer experience."
+excerpt: "How I built klryo, an AI-powered online code editor with Monaco Editor, Judge0, real-time execution, and a modern developer experience."
 tags: ["ai", "nextjs", "typescript", "react", "monaco", "judge0", "code-editor"]
 ---
 
-## Why I Built ZecoAI
+## Why I Built klryo
 
 As a developer, I constantly found myself switching between VS Code, ChatGPT, documentation, and online compilers. Every context switch interrupted my workflow and slowed down problem solving.
 
-I wanted a single platform where I could write code, execute it instantly, get AI assistance, save projects, and work inside a polished interface. That idea eventually became **ZecoAI**—an AI-powered online development environment focused on productivity and developer experience.
+I wanted a single platform where I could write code, execute it instantly, get AI assistance, save projects, and work inside a polished interface. That idea eventually became **klryo**—an AI-powered online development environment focused on productivity and developer experience.
 
 ---
 
 ## Architecture Overview
 
-ZecoAI is built as a modular full-stack application with clear separation between the frontend, backend, AI services, and code execution engine.
+klryo is built as a modular full-stack application with clear separation between the frontend, backend, AI services, and code execution engine.
 
 The application consists of four major layers:
 
@@ -62,7 +62,7 @@ Rather than making AI a separate chatbot, the goal was to integrate it naturally
 
 Executing user code securely was one of the most important parts of the application.
 
-Instead of running code directly on the server, ZecoAI uses **Judge0** as an isolated execution engine.
+Instead of running code directly on the server, klryo uses **Judge0** as an isolated execution engine.
 
 The execution flow looks like this:
 
@@ -126,7 +126,7 @@ Generating AI responses involves asynchronous requests, loading states, error ha
 
 ## What's Next
 
-ZecoAI is continuously evolving. Planned features include:
+klryo is continuously evolving. Planned features include:
 
 - AI Agent Mode
 - GitHub repository integration
@@ -140,4 +140,4 @@ ZecoAI is continuously evolving. Planned features include:
 
 ---
 
-*Built with  React, Tailwind CSS, Monaco Editor, Judge0, Docker, and modern AI APIs.*
+_Built with React, Tailwind CSS, Monaco Editor, Judge0, Docker, and modern AI APIs._

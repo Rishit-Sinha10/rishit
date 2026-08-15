@@ -2,16 +2,28 @@
 import { Reveal } from "../pages/reavel";
 import Link from "next/link";
 import { LinkPreview } from "../components/link_preview";
-
+import { ProfileImage } from "../components/Profile-Image";
+import Img from "../../public/Images/proof.avif";
 export default function About() {
   return (
     <section className="mx-auto w-full max-w-[768px] px-5 py-12">
       <Reveal>
-        <div className="mb-12">
-          <p className="text-label mb-2">About</p>
-          <h1 className="heading-section text-[var(--foreground)]">
-            The long version
-          </h1>
+        <div className="flex items-end justify-between gap-12">
+          <div>
+            <p className="text-label mb-2">About</p>
+            <h1 className="heading-section text-[var(--foreground)]">
+              The long version
+            </h1>
+          </div>
+
+          <div className="relative size-10 shrink-0 overflow-hidden rounded-2xl ring-1 ring-border sm:size-20">
+            <ProfileImage
+              src={Img}
+              alt="Rishit Sinha Image"
+              sizes="12px"
+              className="absolute inset-0"
+            />
+          </div>
         </div>
       </Reveal>
 
@@ -98,12 +110,12 @@ export default function About() {
                 </Link>
               </LinkPreview>
               ,{" "}
-              <LinkPreview url="https://zecoai.vercel.app/">
+              <LinkPreview url="https://klryo.vercel.app/">
                 <Link
-                  href="/work/zecoai"
+                  href="/work/klryo"
                   className="font-medium text-[var(--foreground)] underline decoration-[var(--border)] underline-offset-2 transition hover:decoration-[var(--foreground)]"
                 >
-                  ZecoAI
+                  klryo
                 </Link>{" "}
               </LinkPreview>
               — pushed me in a different direction. Real-time systems,

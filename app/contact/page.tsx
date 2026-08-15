@@ -1,9 +1,8 @@
 "use client";
-import GithubIcon from "./github";
-import LinkedinIcon from "./linkedin";
-import TwitterXIcon from "./x-icon";
-import GmailIcon from "./gmail-icon";
-
+import GithubIcon from "../components/github";
+import LinkedinIcon from "../components/linkedin";
+import TwitterXIcon from "../components/x-icon";
+import GmailIcon from "../components/gmail-icon";
 export default function Contact() {
   return (
     <section className="mx-auto w-full max-w-[768px] px-5 py-6">
@@ -18,7 +17,6 @@ export default function Contact() {
               great together.
             </p>
           </div>
-
           <a
             href="mailto:Sinharishit04@gmail.com"
             className="inline-flex items-center gap-2 rounded-md bg-[var(--accent)] px-4 py-2.5 text-sm font-semibold text-[var(--background)] transition hover:bg-[var(--accent-hover)]"
