@@ -36,6 +36,7 @@ import { ArrowUpRight } from "lucide-react";
 import TwitterXIcon from "../components/x-icon";
 import DiscordIcon from "../components/discord";
 import LinkedinIcon from "../components/linkedin";
+import Image from "next/image";
 const ContributionGraph = dynamic(() => import("../pages/github"), {
   ssr: false,
   loading: () => (
@@ -154,9 +155,7 @@ export default function Portfolio() {
           className="inline-flex items-center gap-2 rounded-lg border border-[var(--border)] bg-[var(--surface)] px-4 py-2.5 text-sm font-medium text-[var(--foreground)]"
         >
           Book A Call
-          <span>
-
-          </span>
+          <span></span>
           <SendIcon size={10} className="h-4 w-4" />
         </a>
         <a
@@ -180,7 +179,6 @@ export default function Portfolio() {
             <GmailIcon size={15} />
             Gmail
           </a>
-
           <a
             href="https://github.com/Rishit-Sinha10"
             target="_blank"
@@ -217,6 +215,18 @@ export default function Portfolio() {
           >
             <LinkedinIcon size={15} />
             Linkedin
+          </a>
+          <a
+            href="https://leetcode.com/u/rizz4566/"
+            className="inline-flex items-center gap-2 rounded-md border px-3 py-2 text-sm transition-colors hover:bg-muted"
+          >
+            <Image
+              src="/Images/leetcode.png"
+              alt="LeetCode"
+              width={16}
+              height={16}
+            />
+            Leetcode
           </a>
         </div>
       </div>
