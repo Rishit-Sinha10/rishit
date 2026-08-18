@@ -110,11 +110,11 @@ export default function Portfolio() {
   return (
     <section className="mx-auto flex w-full max-w-4xl flex-col px-4 py-6 sm:px-6 md:px-8 lg:px-10">
       <div className="mx-auto w-full max-w-[900px]">
-        <div className="relative h-[300px] w-full overflow-hidden">
+        <div className="relative h-[200px] w-full overflow-hidden">
           <ProfileImage
             src={Proof}
             alt="Rishit Sinha"
-            sizes="120vw"
+            sizes="100vw"
             priority
             className="absolute inset-0 h-full w-full"
           />
