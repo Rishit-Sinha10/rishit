@@ -5,32 +5,33 @@ import Navbar from "./components/navbar";
 import Footer from "./components/footer";
 import { Analytics } from "@vercel/analytics/next";
 import TransitionLayout from "./components/transitionpage";
-import { SpeedInsights } from "@vercel/speed-insights/next"
-import { Instrument_Serif, Geist, Geist_Mono } from 'next/font/google';
+import { SpeedInsights } from "@vercel/speed-insights/next";
+import { SmoothScroll } from "../app/components/smoothscroll";
+import { Instrument_Serif, Geist, Geist_Mono } from "next/font/google";
 const SITE_URL = "https://www.rishitsinha.online";
 const instrumentSerif = Instrument_Serif({
-  weight: '400',
-  subsets: ['latin'],
-  variable: '--font-instrument-serif',
-  display: 'swap',
+  weight: "400",
+  subsets: ["latin"],
+  variable: "--font-instrument-serif",
+  display: "swap",
 });
 const geist = Geist({
-  subsets: ['latin'],
-  variable: '--font-geist',
-  display: 'swap',
+  subsets: ["latin"],
+  variable: "--font-geist",
+  display: "swap",
 });
 const geistMono = Geist_Mono({
-  subsets: ['latin'],
-  variable: '--font-geist-mono',
-  display: 'swap',
+  subsets: ["latin"],
+  variable: "--font-geist-mono",
+  display: "swap",
 });
 export const metadata: Metadata = {
   title: {
-    default: "Rishit Sinha — Full-Stack Developer",
+    default: "Rishit Sinha — Portfolio",
     template: "%s | Rishit Sinha",
   },
   description:
-    "Full-stack Developer building real-time systems and production web apps. Final-year CS student with startup experience in fintech, EdTech, and collaborative tools.",
+    "A Final Year Student building real-time systems and production web apps.",
   keywords: [
     "full-stack developer",
     "software engineer",
@@ -49,7 +50,7 @@ export const metadata: Metadata = {
     locale: "en_US",
     url: SITE_URL,
     siteName: "Rishit Sinha",
-    title: "Rishit Sinha — Full-Stack Developer",
+    title: "Rishit Sinha — Portfolio",
     description:
       "Full-stack Developer building real-time systems and production web apps. Final-year CS student with startup experience.",
     images: [
@@ -117,7 +118,11 @@ export default function RootLayout({
   };
 
   return (
-    <html lang="en" className={`${instrumentSerif.variable} ${geist.variable} ${geistMono.variable} h-full antialiased`} suppressHydrationWarning>
+    <html
+      lang="en"
+      className={`${instrumentSerif.variable} ${geist.variable} ${geistMono.variable} h-full antialiased`}
+      suppressHydrationWarning
+    >
       <head>
         <meta
           name="google-site-verification"
@@ -132,15 +137,15 @@ export default function RootLayout({
         <a href="#main-content" className="skip-link">
           Skip to content
         </a>
-        <Analytics/>
-        <SpeedInsights/>
+        <Analytics />
+        <SpeedInsights />
         <Providers>
           <TransitionLayout>
-          <Navbar />
-          <main id="main-content" className="flex-1">
-            {children}
-          </main>
-          <Footer />
+            <Navbar />
+            <main id="main-content" className="flex-1">
+              {children}
+            </main>
+            <Footer />
           </TransitionLayout>
         </Providers>
       </body>
