@@ -121,7 +121,7 @@ export default function Portfolio() {
         </div>
       </div>
       <p className="mt-4 text-left text-sm leading-6 text-[var(--muted)] sm:text-base sm:leading-7">
-        I’m Rishit Sinha, a Final Year Computer Science student building
+        I’m <span className="font-medium text-[var(--foreground)]">Rishit Sinha </span>, a Final Year Computer Science student building
         products that turn ideas into working software — from polished frontend
         experiences to full-stack applications and AI-powered tools. I’ve worked
         across frontend and full-stack development through internships and

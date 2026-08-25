@@ -6,7 +6,6 @@ import { useReducedMotion } from "motion/react";
 import { ChevronLeft, ChevronRight } from "lucide-react";
 import { cn } from "../../lib/utils";
 import Image1 from "../../public/Images/imag1.png";
-import Image2 from "../../public/Images/imag2.png";
 const NOISE =
   "url(\"data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)'/%3E%3C/svg%3E\")";
 
@@ -21,11 +20,6 @@ export const ABOUT_SLIDES: Slide[] = [
     src: Image1,
     alt: "Rishit Sinha, full-stack developer",
     caption: "A few frames in",
-  },
-  {
-    src: Image2,
-    alt: "Rishit Sinha portrait",
-    caption: "From the archive",
   },
 ];
 

@@ -6,7 +6,7 @@ import { useState, useEffect, useMemo } from "react";
 import { Moon, Sun, Menu, X } from "lucide-react";
 import { useTheme } from "next-themes";
 import { cn } from "../../lib/utils";
-import Proof from "../../public/Images/proof.avif";
+import Proof from "../../public/Images/imag1.png";
 import { useActiveSection } from "../hooks/useActiveSection";
 
 const NAV_LINKS = [
@@ -14,7 +14,7 @@ const NAV_LINKS = [
   { label: "About", href: "/about", section: null },
   { label: "Blog", href: "/blog", section: null },
   { label: "Projects", href: "/projects", section: "null" },
-  { label: "Experience", href: "/experience", section:null},
+  { label: "Experience", href: "/experience", section: null },
 ];
 
 export default function Navbar() {
@@ -94,8 +94,7 @@ export default function Navbar() {
             }
             className={cn(
               "rounded-full border p-2 transition",
-              mounted && resolvedTheme === "dark"
-  
+              mounted && resolvedTheme === "dark",
             )}
             aria-label={
               resolvedTheme === "dark"

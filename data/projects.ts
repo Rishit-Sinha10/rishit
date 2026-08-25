@@ -136,7 +136,7 @@ export const PROJECTS: ProjectCaseStudy[] = [
     ],
     liveUrl: "https://finan-cino.vercel.app/",
     githubUrl: "https://github.com/Rishit-Sinha10/Financcino",
-    accent: "#4b5563",
+    accent: "#059669",
     skills: [
       { name: "React", slug: "react", category: "frontend" },
       { name: "Node.js", slug: "nodedotjs", category: "backend" },
@@ -241,7 +241,7 @@ export const PROJECTS: ProjectCaseStudy[] = [
     ],
     liveUrl: "https://echo-rizz.vercel.app/",
     githubUrl: "https://github.com/Rishit-Sinha10/P1",
-    accent: "#374151",
+    accent: "#059669",
     skills: [
       { name: "React", slug: "react", category: "frontend" },
       { name: "Vite", slug: "Vite", category: "frontend" },
@@ -318,7 +318,7 @@ export const PROJECTS: ProjectCaseStudy[] = [
     ],
     liveUrl: "https://klryo.vercel.app/",
     githubUrl: "https://github.com/Rishit-Sinha10/klryo",
-    accent: "#9ca3af",
+    accent: "#059669",
     skills: [
       { name: "React", slug: "react", category: "frontend" },
       { name: "Axios", slug: "Axios", category: "frontend" },
@@ -400,7 +400,7 @@ export const PROJECTS: ProjectCaseStudy[] = [
     ],
     liveUrl: "https://deploysus.vercel.app/",
     githubUrl: "https://github.com/Rishit-Sinha10/clash_royale",
-    accent: "#9ca3af",
+    accent: "#059669",
     skills: [
       { name: "React", slug: "react", category: "frontend" },
       { name: "Vite", slug: "vite", category: "frontend" },
@@ -488,175 +488,93 @@ export const PROJECTS: ProjectCaseStudy[] = [
     ],
   },
   {
-  id: "PaperFlow",
-  title: "PaperFlow",
-  tagline:
-    "A premium document workspace for scanning, cleaning, extracting, studying, and exporting documents in one place.",
-  status: "In dev",
-  summary: [
-    "PaperFlow is a full-stack document productivity platform designed around a complete document workflow — scan, clean, OCR, edit, study, and export. Built with Next.js and TypeScript, the platform combines browser-side document processing with Supabase authentication and PostgreSQL, Tesseract.js OCR, PDF/DOCX tooling, OpenAI-powered study notes, and Razorpay subscriptions. The product is designed to evolve from a document utility into a complete productivity workspace for students and professionals."
-  ],
-  problem: [
-    "Students and professionals often rely on multiple disconnected tools for scanning documents, extracting text, editing files, generating notes, and exporting their work.",
-    "Existing PDF and document tools can feel fragmented, expensive, or overly complicated for users who simply want to transform documents into usable study and productivity material.",
-    "There is an opportunity to combine document processing, OCR, AI-assisted study workflows, and export capabilities into a single focused workspace.",
-    "Building the product also requires secure authentication, role-based access, private student verification, subscription management, and safe handling of AI and payment credentials."
-  ],
-  solution:
-    "A unified document workspace that brings scanning, document cleanup, OCR, editing, AI-powered study notes, and export into a single workflow. PaperFlow uses browser-side processing where practical while keeping authentication, database access, billing, and sensitive AI operations behind secure server-side boundaries. The architecture is designed to support free users, verified students, Pro subscribers, and administrators.",
-  features: [
-    {
-      label: "Document workspace",
-      detail:
-        "A centralized workflow built around scanning, cleaning, OCR, editing, studying, and exporting documents."
-    },
-    {
-      label: "OCR processing",
-      detail:
-        "Tesseract.js enables browser-side OCR so users can extract text from scanned documents and images."
-    },
-    {
-      label: "PDF & image tools",
-      detail:
-        "Browser-side document processing with pdf-lib provides the foundation for working with PDFs and images."
-    },
-    {
-      label: "AI study notes",
-      detail:
-        "OpenAI's Responses API powers the study workflow, turning extracted document content into useful study notes."
-    },
-    {
-      label: "DOCX generation",
-      detail:
-        "The document pipeline supports generating editable DOCX output alongside PDF-based workflows."
-    },
-    {
-      label: "Student verification",
-      detail:
-        "Verified students can submit college-ID verification and receive a temporary Pro benefit followed by student-discount eligibility."
-    },
-    {
-      label: "Pro subscriptions",
-      detail:
-        "Razorpay Subscriptions provides the foundation for recurring Pro billing with separate regular and verified-student plans."
-    },
-    {
-      label: "Role-based platform",
-      detail:
-        "Free users, verified students, Pro subscribers, and administrators have different capabilities and platform responsibilities."
-    }
-  ],
-  architecture: {
-    flow: [
-      "PaperFlow is built as a Next.js + TypeScript application using Tailwind CSS for the product interface.",
-      "Supabase provides authentication, PostgreSQL database functionality, row-level security, and private storage for student verification.",
-      "Browser-side processing handles PDF and image operations with pdf-lib and OCR with Tesseract.js where appropriate.",
-      "DOCX generation is handled through the docx library, providing an editable document export path.",
-      "OpenAI's Responses API powers the AI study-notes workflow, with the API key kept server-side.",
-      "Razorpay Subscriptions provides recurring Pro billing, with webhook handling used to synchronize subscription state.",
-      "The application includes an admin foundation for student verification, Pro grants, and platform analytics.",
-      "Heavy Office/PDF conversion workloads are planned for an isolated worker architecture rather than serverless request execution."
-    ],
-  },
-  results: [
-    "7 commits",
-    "1 star",
-    "1 fork",
-    "0 open issues or pull requests",
-    "Pre-release / portfolio-stage build"
-  ],
-  liveUrl: "",
-  githubUrl: "https://github.com/iamsuyashhhhh/1Tool",
-  accent: "#6366f1",
-  skills: [
-    { name: "Next.js", slug: "nextdotjs", category: "frontend" },
-    { name: "TypeScript", slug: "typescript", category: "frontend" },
-    { name: "Tailwind CSS", slug: "tailwindcss", category: "frontend" },
-    { name: "Supabase", slug: "supabase", category: "backend" },
-    { name: "PostgreSQL", slug: "postgresql", category: "backend" },
-    { name: "Razorpay", slug: "razorpay", category: "backend" },
-  ],
- },
- {
-    id: "notemog",
-    title: "NoteMog",
+    id: "PaperFlow",
+    title: "PaperFlow",
     tagline:
-      "An AI-powered study planner that organizes routines, notes, and goals without friction.",
-    status: "Abandoned",
+      "A premium document workspace for scanning, cleaning, extracting, studying, and exporting documents in one place.",
+    status: "In dev",
     summary: [
-      "NoteMog is a MERN-stack study planning platform aimed at helping students organize notes, build study schedules, and track learning progress in one place, with AI-driven study plan generation as its core differentiator. The frontend — dashboard, planner, note management, and calendar UI — is fully built; the backend API and AI integration are actively being developed on top of a complete database schema.This project is a good one to talk about in-progress and honestly: it shows you can plan and build a full data model and frontend experience before backend logic catches up, which is a realistic way real product teams often build (schema-first, UI-first, then wire up the API).",
+      "PaperFlow is a full-stack document productivity platform designed around a complete document workflow — scan, clean, OCR, edit, study, and export. Built with Next.js and TypeScript, the platform combines browser-side document processing with Supabase authentication and PostgreSQL, Tesseract.js OCR, PDF/DOCX tooling, OpenAI-powered study notes, and Razorpay subscriptions. The product is designed to evolve from a document utility into a complete productivity workspace for students and professionals.",
     ],
     problem: [
-      "No intelligence layer. Existing planners require the student to manually prioritize; there's no system using the student's own notes/goals to suggest what to focus on next.",
-      "No connection between notes and planning. Study plans are made independently of the actual material being studied, so plans go stale or feel arbitrary.",
+      "Students and professionals often rely on multiple disconnected tools for scanning documents, extracting text, editing files, generating notes, and exporting their work.",
+      "Existing PDF and document tools can feel fragmented, expensive, or overly complicated for users who simply want to transform documents into usable study and productivity material.",
+      "There is an opportunity to combine document processing, OCR, AI-assisted study workflows, and export capabilities into a single focused workspace.",
+      "Building the product also requires secure authentication, role-based access, private student verification, subscription management, and safe handling of AI and payment credentials.",
     ],
-    solution: [
-      "A smart note system for organizing notes by subject, with AI-generated summaries planned to condense material automatically.",
-      "A drag-and-drop study planner with calendar-based scheduling (FullCalendar), priority tagging, and deadline tracking.",
-      "An AI study plan generator (in progress) intended to turn a student's goals and notes into an actual day-by-day schedule, rather than leaving prioritization entirely manual",
-      "A progress and analytics dashboard (Chart.js) surfacing study time, task completion, and per-subject progress.",
-      "Clerk-based authentication with JWT session handling and bcrypt password hashing for account security.",
-    ],
+    solution:
+      "A unified document workspace that brings scanning, document cleanup, OCR, editing, AI-powered study notes, and export into a single workflow. PaperFlow uses browser-side processing where practical while keeping authentication, database access, billing, and sensitive AI operations behind secure server-side boundaries. The architecture is designed to support free users, verified students, Pro subscribers, and administrators.",
     features: [
       {
-        label: "Note Management",
-        detail: [
-          "Create/organize/categorize notes by subject with rich text editing",
-          "Search and filtering",
-        ],
-      },
-      {
-        label: "Study Planner",
-        detail: [
-          "Drag-and-drop task management, calendar-based scheduling (FullCalendar)",
-          "Priority-based organization and deadline tracking",
-        ],
-      },
-      {
-        label: "Progress And Analytics",
-        detail: [
-          "Real-time performance metrics and Chart.js visualizations",
-          "Task completion and study-time tracking",
-        ],
-      },
-      {
-        label: "Subject Management",
+        label: "Document workspace",
         detail:
-          "Organize by subject/course, allocate study time, subject-level recommendations",
+          "A centralized workflow built around scanning, cleaning, OCR, editing, studying, and exporting documents.",
+      },
+      {
+        label: "OCR processing",
+        detail:
+          "Tesseract.js enables browser-side OCR so users can extract text from scanned documents and images.",
+      },
+      {
+        label: "PDF & image tools",
+        detail:
+          "Browser-side document processing with pdf-lib provides the foundation for working with PDFs and images.",
+      },
+      {
+        label: "AI study notes",
+        detail:
+          "OpenAI's Responses API powers the study workflow, turning extracted document content into useful study notes.",
+      },
+      {
+        label: "DOCX generation",
+        detail:
+          "The document pipeline supports generating editable DOCX output alongside PDF-based workflows.",
+      },
+      {
+        label: "Student verification",
+        detail:
+          "Verified students can submit college-ID verification and receive a temporary Pro benefit followed by student-discount eligibility.",
+      },
+      {
+        label: "Pro subscriptions",
+        detail:
+          "Razorpay Subscriptions provides the foundation for recurring Pro billing with separate regular and verified-student plans.",
+      },
+      {
+        label: "Role-based platform",
+        detail:
+          "Free users, verified students, Pro subscribers, and administrators have different capabilities and platform responsibilities.",
       },
     ],
     architecture: {
       flow: [
-        "Users access NoteMog through a React + Vite frontend, where they can manage notes, study plans, tasks, subjects, and AI-generated summaries from a unified dashboard.",
-        "Authentication is handled by Clerk, providing secure sign-in, session management, and protected routes before any API requests reach the backend.",
-        "Authenticated requests are sent to the Express.js REST API, where Clerk and JWT middleware validate the user's identity and authorize access.",
-        "The backend routes requests through dedicated controllers for each domain entity—Users, Notes, Plans, Tasks, Subjects, and Summaries—keeping the application modular and maintainable.",
-        "Business logic is executed inside the controllers, while Mongoose models handle communication with MongoDB for persistent data storage.",
-        "MongoDB stores all application data, including user profiles, notes, study plans, tasks, subjects, and AI-generated summaries.",
-        "After processing, the backend returns structured JSON responses to the frontend, allowing React to update the interface in real time without full page reloads.",
-        "This domain-driven architecture separates authentication, business logic, and data persistence, making NoteMog scalable, easy to extend, and maintainable as new features are added.",
+        "PaperFlow is built as a Next.js + TypeScript application using Tailwind CSS for the product interface.",
+        "Supabase provides authentication, PostgreSQL database functionality, row-level security, and private storage for student verification.",
+        "Browser-side processing handles PDF and image operations with pdf-lib and OCR with Tesseract.js where appropriate.",
+        "DOCX generation is handled through the docx library, providing an editable document export path.",
+        "OpenAI's Responses API powers the AI study-notes workflow, with the API key kept server-side.",
+        "Razorpay Subscriptions provides recurring Pro billing, with webhook handling used to synchronize subscription state.",
+        "The application includes an admin foundation for student verification, Pro grants, and platform analytics.",
+        "Heavy Office/PDF conversion workloads are planned for an isolated worker architecture rather than serverless request execution.",
       ],
     },
     results: [
-      "Achieved a Lighthouse Performance score of 96/100",
-      "Scored 97/100 for Accessibility and 91/100 for SEO",
-      "Speed Index (SI): 1.1 s",
-      "First Contentful Paint (LCP): 0.9 s",
+      "7 commits",
+      "1 star",
+      "1 fork",
+      "0 open issues or pull requests",
+      "Pre-release / portfolio-stage build",
     ],
-    liveUrl: "https://lumina-nine-tan.vercel.app/",
-    githubUrl: "https://github.com/Rishit-Sinha10/NoteMog",
-    accent: "#6b7280",
+    liveUrl: "",
+    githubUrl: "https://github.com/iamsuyashhhhh/1Tool",
+    accent: "#059669",
     skills: [
-      { name: "React", slug: "react", category: "frontend" },
-      { name: "Chart.Js", slug: "Chart.Js", category: "frontend" },
-      { name: "Tailwindcss", slug: "Tailwindcss", category: "frontend" },
-      { name: "Mongoose", slug: "mongoosedotws", category: "backend" },
-      { name: "Eslint", slug: "Eslint", category: "devops" },
-      { name: "Node.js", slug: "nodedotjs", category: "backend" },
-      { name: "MongoDB", slug: "mongodb", category: "database" },
+      { name: "Next.js", slug: "nextdotjs", category: "frontend" },
+      { name: "TypeScript", slug: "typescript", category: "frontend" },
       { name: "Tailwind CSS", slug: "tailwindcss", category: "frontend" },
-      { name: "Vercel", slug: "vercel", category: "devops" },
-      { name: "Render", slug: "render", category: "devops" },
+      { name: "Supabase", slug: "supabase", category: "backend" },
+      { name: "PostgreSQL", slug: "postgresql", category: "backend" },
+      { name: "Razorpay", slug: "razorpay", category: "backend" },
     ],
-  },  
+  },
 ];

@@ -24,28 +24,41 @@ export default function About() {
       </Reveal>
 
       <div className="mt-12 flex flex-col gap-12">
-        {/* Where I started */}
         <Reveal delay={0.05}>
-          <Section label="Where I started">
+          <Section label="A little About Me">
             <p>
-              I didn&apos;t set out to become a software engineer. I started by
-              being curious about how things on the internet actually worked —
-              why a button did what it did, how a page knew your name, what
-              happened between clicking &quot;submit&quot; and seeing a result.
+              Hi I am Rishit Sinha,a final Year B.Tech Student in Artificial
+              Intelligence & Data Science from Poornima University I'&apos;m a
+              Full Stack Developer but I Had To Choose where I'm Strongest
+              I&apos;d Say Frontend and Product Engneering
             </p>
             <p>
-              That curiosity pulled me into computer science. I spent the early
-              days bouncing between tutorials, breaking small projects, and
-              slowly learning that the real skill isn&apos;t writing code —
-              it&apos;s understanding the problem well enough that the code
-              becomes obvious.
+              I Enjoy Taking An Idea from a rough concept and Turning it into
+              something that feels polished,fast,and actually usable.Most of my
+              Work revolves around React,Next.js,Typescript,Javascript and
+              modern frontend tooling while i&apos;m comfortable going into the
+              backend with Node.js,Express,Python,Databases,API's and deployment
+              when the product needs it
             </p>
           </Section>
         </Reveal>
-
+        <Reveal>
+          <Section label="Where I'm From">
+            <p>
+              I&apos;m from Jaipur Rajasthan,India My Journey into development
+              Started less with a specfic carrer plan and more with curiosity I
+              Wanted to understand how the website and applications.
+            </p>
+            <p>
+              The Curiosity eventually turned into building Things myself At
+              First,They Were small experiments -things that broke constantly
+              and were held together by questionable code
+            </p>
+          </Section>
+        </Reveal>
         {/* Turning points */}
         <Reveal delay={0.05}>
-          <Section label="Turning points">
+          <Section label="What I've Been Building">
             <p>
               The first real turning point was building{" "}
               <LinkPreview url="https://finan-cino.vercel.app/">
@@ -159,13 +172,27 @@ export default function About() {
 
         {/* Colophon */}
         <Reveal delay={0.05}>
-          <div className="border-t border-[var(--border)] pt-8">
-            <p className="text-label mb-3">Colophon</p>
-            <p className="text-[15px] leading-7 text-[var(--muted)]">
-              Built with Next.js, React, Tailwind CSS, and Framer Motion. Hosted
-              on Vercel. Set in Satoshi.
+          <Section label="Outside the code">
+            <p>
+              I&apos;m Not Someone Who Spend every walking hour thinking about
+              software I Like exploring new places ,following football
+              experimenting with new ideas,and occasionally starting projects
+              just because i wonderd &quot;Could I Actually Build That?&quot;
             </p>
-          </div>
+          </Section>
+        </Reveal>
+        <Reveal>
+          <Section label="Where I'm Going">
+            <p>
+              I'm Currently Finishing my Degree and Figuring out what comes
+              next. I don&apos;t have my entire carrer mapped out and I
+              Don&apos;t think I need to I&apos;m Exploring Backend system
+              ,distributed systems developer Tooling and the countless
+              intresting problems that exist somewhere between &quot; This
+              Should be simple &quot; and &qout; why is this Taking three days
+              to debug? &qout;{" "}
+            </p>
+          </Section>
         </Reveal>
       </div>
 
