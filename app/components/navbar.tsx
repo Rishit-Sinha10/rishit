@@ -13,7 +13,7 @@ const NAV_LINKS = [
   { label: "Home", href: "/", section: null },
   { label: "About", href: "/about", section: null },
   { label: "Blog", href: "/blog", section: null },
-  { label: "Projects", href: "/projects", section: "null" },
+  { label: "Projects", href: "/projects", section: null },
   { label: "Experience", href: "/experience", section: null },
 ];
 
@@ -59,8 +59,8 @@ export default function Navbar() {
           <Image
             src={Proof}
             alt="Rishit Image"
-            width={36}
-            height={36}
+            width={18}
+            height={18}
             className="rounded-full object-cover"
           />
           <div></div>

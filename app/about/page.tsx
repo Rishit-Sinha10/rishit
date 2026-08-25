@@ -189,23 +189,15 @@ export default function About() {
               Don&apos;t think I need to I&apos;m Exploring Backend system
               ,distributed systems developer Tooling and the countless
               intresting problems that exist somewhere between &quot; This
-              Should be simple &quot; and &qout; why is this Taking three days
-              to debug? &qout;{" "}
+              Should be simple &quot; and &quot;why is this Taking three days to
+              debug?&quot;
             </p>
           </Section>
         </Reveal>
       </div>
-
-      {/* Personal sign-off */}
-      <Reveal delay={0.05}>
-        <div className="mt-8 flex justify-center">
-          <Signature />
-        </div>
-      </Reveal>
     </section>
   );
 }
-
 function Section({
   label,
   children,

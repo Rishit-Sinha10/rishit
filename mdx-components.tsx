@@ -2,22 +2,30 @@ import type { MDXComponents } from "mdx/types";
 
 const components: MDXComponents = {
   h1: ({ children }) => (
-    <h1 className="heading-section text-[var(--foreground)]">{children}</h1>
+    <h1 className="heading-section mb-6 text-[var(--foreground)]">
+      {children}
+    </h1>
   ),
   h2: ({ children }) => (
-    <h2 className="mt-10 mb-4 text-2xl font-bold text-[var(--foreground)]" style={{ letterSpacing: "-0.02em" }}>
+    <h2
+      className="mt-12 mb-5 text-2xl font-bold text-[var(--foreground)]"
+      style={{ letterSpacing: "-0.02em" }}
+    >
       {children}
     </h2>
   ),
   h3: ({ children }) => (
-    <h3 className="mt-8 mb-3 text-xl font-semibold text-[var(--foreground)]">
+    <h3 className="mt-9 mb-4 text-xl font-semibold text-[var(--foreground)]">
       {children}
     </h3>
   ),
   p: ({ children }) => (
-    <p className="mb-4 text-[18px] leading-[1.8] text-[var(--muted)]">
+    <p className="mb-6 text-[18px] leading-7 text-[var(--muted)]">{children}</p>
+  ),
+  strong: ({ children }) => (
+    <strong className="font-semibold text-[var(--foreground)]">
       {children}
-    </p>
+    </strong>
   ),
   a: ({ href, children }) => (
     <a
@@ -34,10 +42,10 @@ const components: MDXComponents = {
     <ol className="mb-4 list-decimal pl-6 text-[var(--muted)]">{children}</ol>
   ),
   li: ({ children }) => (
-    <li className="mb-2 text-[18px] leading-[1.8]">{children}</li>
+    <li className="mb-2 text-[18px] leading-7">{children}</li>
   ),
   blockquote: ({ children }) => (
-    <blockquote className="my-6 border-l-2 border-[var(--border)] pl-4 text-[var(--muted)] italic">
+    <blockquote className="my-8 border-l-2 border-[var(--border)] py-2 pl-5 text-[var(--muted)] italic">
       {children}
     </blockquote>
   ),

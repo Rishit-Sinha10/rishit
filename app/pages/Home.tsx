@@ -121,34 +121,39 @@ export default function Portfolio() {
         </div>
       </div>
       <p className="mt-4 text-left text-sm leading-6 text-[var(--muted)] sm:text-base sm:leading-7">
-        I’m <span className="font-medium text-[var(--foreground)]">Rishit Sinha </span>, a Final Year Computer Science student building
-        products that turn ideas into working software — from polished frontend
-        experiences to full-stack applications and AI-powered tools. I’ve worked
-        across frontend and full-stack development through internships and
-        independent projects, and I’m currently going deeper into backend
-        engineering, system design, and AI while building products of my own. I
-        care about the details users notice, the architecture developers
-        maintain, and most importantly, shipping something that actually works.
-      </p>
-      <div className="mt-4 text-left text-sm leading-6 text-[var(--muted)] sm:text-base sm:leading-7">
-        I’ve worked across frontend and full-stack development through
-        internships and independent products, including building Shopify
-        experiences at{" "}
+        Hey, I’m{" "}
+        <LinkPreview url="https://www.rishitsinha.online/">
+          <span className="font-medium text-[var(--foreground)]">
+            Rishit Sinha
+          </span>
+        </LinkPreview>
+        , a final year Computer Science student and developer building products
+        for frontend, full-stack and AI. I have hands-on experience through
+        internships like Shopify development at
         <LinkPreview url="https://thetastymillets.com/">
+          {" "}
           <span className="font-medium text-[var(--foreground)]">
             TheTastyMillets
           </span>
         </LinkPreview>{" "}
-        and working on web products at{" "}
+        and web design at{" "}
         <LinkPreview url="https://www.nextlearn.in/">
           <span className="font-medium text-[var(--foreground)]">
             NextLearn Technologies
           </span>
         </LinkPreview>
-        . Along the way, I’ve built projects like ZecoAI, a browser-based coding
-        environment, and Flux, a real-time streaming platform — while continuing
-        to go deeper into backend engineering, system design, and AI.
-      </div>
+        . I’ve also created products like{" "}
+        <LinkPreview url="https://klryo.vercel.app/">
+          <span className="font-medium text-[var(--foreground)]">Klyro</span>
+        </LinkPreview>
+        , a browser-based coding environment, and{" "}
+        <LinkPreview url="https://echo-rizz.vercel.app/">
+          <span className="font-medium text-[var(--foreground)]">Flux</span>
+        </LinkPreview>
+        , a real-time streaming platform. I’m currently getting my hands dirty
+        with backend engineering, system design, and AI, and I’m focusing on
+        creating software that’s polished, maintainable, and actually works.
+      </p>
       <div className="mt-4 flex flex-wrap items-center gap-2.5 sm:gap-3">
         <a
           href="https://cal.com/rishit-sinha-eku02v/30min?overlayCalendar=true"
@@ -228,13 +233,11 @@ export default function Portfolio() {
             />
             Leetcode
           </a>
-           <a
+          <a
             href="https://codolio.com/profile/SCXbZSeq"
             className="inline-flex items-center gap-2 rounded-md border px-3 py-2 text-sm transition-colors hover:bg-muted"
           >
-            <Code2Icon
-              size={16}
-            />
+            <Code2Icon size={16} />
             Codolio
           </a>
         </div>

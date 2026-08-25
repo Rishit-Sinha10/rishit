@@ -1,6 +1,7 @@
 "use client";
 import { Reveal } from "../../pages/reavel";
 import { motion } from "motion/react";
+
 const EXPERIENCES = [
   {
     id: "01",
@@ -55,24 +56,28 @@ export default function Experience() {
                 {exp.id}
               </div>
 
-              <div className="min-w-0 flex-1">
-                <div className="mb-3 flex flex-col gap-1 sm:flex-row sm:items-baseline sm:justify-between sm:gap-2">
-                  <div>
-                    <h3 className="text-base font-semibold text-[var(--foreground)]">
-                      {exp.title}
-                    </h3>
-                    <p className="text-sm text-[var(--muted)]">{exp.company}</p>
+              <details className="group min-w-0 flex-1">
+                <summary className="flex cursor-pointer list-none flex-col gap-1 outline-none sm:flex-row sm:items-baseline sm:justify-between sm:gap-2 [&::-webkit-details-marker]:hidden">
+                  <div className="flex items-start gap-2">
+                    <div>
+                      <h3 className="text-base font-semibold text-[var(--foreground)]">
+                        {exp.title}
+                      </h3>
+                      <p className="text-sm text-[var(--muted)]">
+                        {exp.company}
+                      </p>
+                    </div>
                   </div>
                   <span className="shrink-0 text-xs font-medium text-[var(--muted)]">
                     {exp.period}
                   </span>
-                </div>
+                </summary>
 
-                <ul className="flex flex-col gap-2 pl-4">
+                <ul className="mt-3 flex flex-col gap-1.5 pl-1">
                   {exp.description.map((desc, i) => (
                     <li
                       key={i}
-                      className="relative pl-3 text-[15px] leading-relaxed text-[var(--muted)]"
+                      className="relative pl-1 text-[12px] leading-relaxed text-[var(--muted)]"
                     >
                       <span className="absolute left-0 top-0 text-[var(--border)]">
                         •
@@ -81,7 +86,7 @@ export default function Experience() {
                     </li>
                   ))}
                 </ul>
-              </div>
+              </details>
             </motion.div>
           </Reveal>
         ))}
